@@ -1,0 +1,42 @@
+body{
+    text-align: center;
+}
+
+table{
+    margin: 50px auto;
+}
+
+table,th,td{
+    border:1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+tr:nth-child(even){
+    background-color: lightgreen;
+}
+tr:nth-child(odd){
+    background-color: lightpink;
+}
+
+thead tr:first-child{
+    background-color: lightgray;
+}
+
+div{
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: inset -15px -15px 50px 15px black;
+    margin-bottom: 10px;
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: rgb(94, 94, 1);
+}
+.green{
+    background-color: rgb(1, 50, 1);
+}
