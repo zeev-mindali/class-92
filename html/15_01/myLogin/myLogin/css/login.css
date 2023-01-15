@@ -1,0 +1,31 @@
+body{
+    background-color: lightblue;
+    text-align: center;
+}
+
+#header{
+    font-size: xx-large;    
+}
+
+.company{
+    color:red;
+    font-weight: bolder;
+}
+.myInput{
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.myButton{
+    background-color: lightgreen;
+}
+
+.loginBox{
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 5px 5px 50px 5px;
+  width: 250px;
+  margin: auto;
+  margin-top: 150px;
+}
