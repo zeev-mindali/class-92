@@ -1,0 +1,47 @@
+body{
+    background-color: #f0f2f5;
+}
+.loginBox{
+    background: #ffffff;
+    margin: 40px 0px 0px;
+    padding: 20px ;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    width:396px;
+    border: none;
+    text-align: center;
+}
+
+input{
+    font-size: 17px;
+    padding: 14px 16px;    
+    width: 332px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #dddfe2;
+}  
+
+.loginBtn{
+    background-color: #1877f2;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    line-height: 48px;
+    padding: 0 16px;
+    height: 48px;
+    color:white;
+    width:370px;
+}
+
+.createBtn{
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    line-height: 48px;
+    padding: 0 16px;
+    background-color: #42b72a;
+    color:white;
+    margin-top: 15px;
+    width:160px;
+    height: 48px;
+}
