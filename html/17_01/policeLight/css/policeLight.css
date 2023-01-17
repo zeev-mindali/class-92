@@ -1,0 +1,45 @@
+.back{
+    width:100%;
+    height:960px;
+    background:#000;
+}
+
+.red{
+    display: absolute;
+    background: rgb(199, 0, 0);
+    background-image:radial-gradient(red,black);
+    background-size: 15px 15px;
+    width:100%;
+    height:50%;  
+    animation: 2s redAnim infinite; 
+}
+
+.blue{
+    display: absolute;
+    background: rgb(0, 0, 199);
+    background-image:radial-gradient(blue,black);
+    background-size: 15px 15px;
+    width:100%;
+    height: 50%;
+    animation: 2s blueAnim infinite; 
+}
+@keyframes redAnim{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.1;
+    }
+}
+
+@keyframes blueAnim{
+    0%{
+        opacity: 0.1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.1;
+    }
+}
