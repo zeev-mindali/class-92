@@ -11,7 +11,7 @@
     background-size: 15px 15px;
     width:100%;
     height:50%;  
-    animation: 2s redAnim infinite; 
+    animation: 1s redAnim infinite; 
 }
 
 .blue{
@@ -21,7 +21,7 @@
     background-size: 15px 15px;
     width:100%;
     height: 50%;
-    animation: 2s blueAnim infinite; 
+    animation: 1s blueAnim infinite; 
 }
 @keyframes redAnim{
     0%{
