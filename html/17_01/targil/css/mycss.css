@@ -1,0 +1,22 @@
+div:nth-child(1)>input:nth-child(even){
+    background-color: green;
+}
+div:nth-child(1)>input:nth-child(odd){
+    background-color: red;
+}
+div:nth-child(3)>input:nth-child(1){
+    background-color: green;
+}
+div:nth-child(3)>input:last-child{
+    background-color: red;
+}
+div:nth-child(5)>input:nth-child(2n+3){
+    background-color: red;
+}
+div:nth-child(7)>input:nth-child(odd):hover{
+    background-color: blue;
+}
+div:nth-child(9)>input:nth-child(even):hover,input:last-child:hover{
+    display: none;
+}
+
