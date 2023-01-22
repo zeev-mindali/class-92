@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Targil</title>
+    <!-- BootStrap-->
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    />
+    <!-- javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container" dir="rtl">
+      <h1>TouchWand - טופס טכנאי</h1>
+      <hr />
+      <div class="row">
+        <div class="col">
+          <input type="date" />
+        </div>
+        <div class="col">
+          <input type="time" />
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col d-grid">
+          <input type="number" placeholder="דירה" />
+        </div>
+        <div class="col d-grid">
+          <input type="number" placeholder="קומה" />
+        </div>
+        <div class="col d-grid">
+          <input type="text" placeholder="כתובת" />
+        </div>
+        <div class="col d-grid">
+          <input type="tel" placeholder="טלפון" />
+        </div>
+      </div>
+      <hr />
+      <div class="dropdown">
+        <button
+          type="button"
+          class="btn btn-primary dropdown-toggle"
+          data-bs-toggle="dropdown"
+        >
+          item malfunction
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Micro Model</a></li>
+          <li><a href="#">Shutter</a></li>
+          <li><a href="#">Boiler</a></li>
+          <li><a href="#">Wall Wand</a></li>
+        </ul>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col d-grid">
+          <textarea placeholder="תיאור התקלה" width="400"></textarea>
+        </div>
+        <div class="col d-grid">
+          <textarea placeholder="תיאור התיקון" width="400"></textarea>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col d-grid">
+          <button type="button" class="btn btn-primary btn-block" width="300">
+            שלח טופס
+          </button>
+        </div>
+        <div class="col d-grid">
+          <button type="reset" class="btn btn-danger btn-block" width="300">
+            איפוס
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
