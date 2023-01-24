@@ -25,7 +25,6 @@
           <button
             type="button"
             class="btn btn-primary"
-            value="Shopping cart"
             data-bs-toggle="modal"
             data-bs-target="#shoopingCart"
           >
@@ -96,6 +95,143 @@
             </div>
           </div>
         </div>
+      </div>
+      <!-- login modal -->
+      <div class="modal" id="loginForm">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- header (כותרת לתיבה קפיצה)-->
+            <div class="modal-header">
+              <h1 class="modal-title">Login system</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <!-- body (התוכן שנרצה לשים)-->
+            <div class="row">
+              <input type="text" placeholder="Enter user name..." />
+            </div>
+            <br />
+            <div class="row">
+              <input type="password" placeholder="Enter user password" />
+            </div>
+            <br />
+            <input type="checkbox" />Remember me
+            <!-- footer (כפתורים, checkout ,login ,add item, cancel)-->
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                cancel
+              </button>
+              <button
+                type="button"
+                class="btn btn-success"
+                data-bs-dismiss="modal"
+              >
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- web site-->
+      <br /><br />
+      <div class="toast show">
+        <div class="toast-header">
+          Thank you for buying
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+          ></button>
+        </div>
+        <div class="toast-body">Lin has left the building....</div>
+      </div>
+      <hr />
+      <div class="p-4 bg-secondary text-white">
+        <div class="p-3 bg-info">flex item 1</div>
+        <div class="p-3 bg-warning">flex item 2</div>
+        <div class="p-3 bg-primary">flex item 3</div>
+      </div>
+      <hr />
+      <!-- שלושה דיבים אחד מתחת לשני בצורה נכונה-->
+      <div class="d-flex p-3 bg-secondary text-white">
+        <div class="p-2 bg-info">register as new user</div>
+        <div class="p-2 bg-warning">login to system</div>
+        <div class="p-2 bg-primary">continue as guest</div>
+        <div class="p-2 bg-danger">zeevik</div>
+      </div>
+      <hr />
+      <div class="d-inline-flex p-3 bg-secondary text-white">
+        <div class="p-2 bg-info">register as new user</div>
+        <div class="p-2 bg-warning">login to system</div>
+        <div class="p-2 bg-primary">continue as guest</div>
+        <div class="p-2 bg-danger">zeevik</div>
+      </div>
+      <hr />
+      <div class="d-flex flex-row bg-secondary text-white">
+        <div class="p-2 bg-info">register as new user</div>
+        <div class="p-2 bg-warning">login to system</div>
+        <div class="p-2 bg-primary">continue as guest</div>
+        <div class="p-2 bg-danger">zeevik</div>
+      </div>
+      <hr />
+      <div class="p-2 d-flex flex-row-reverse bg-secondary text-white">
+        <div class="p-2 bg-info">register as new user</div>
+        <div class="p-2 bg-warning">login to system</div>
+        <div class="p-2 bg-primary">continue as guest</div>
+        <div class="p-2 bg-danger">zeevik</div>
+      </div>
+      <hr />
+      <div class="p-2 d-flex justify-content-start bg-secondary text-white">
+        <div class="p-2 bg-info">register as new user</div>
+        <div class="p-2 bg-warning">login to system</div>
+        <div class="p-2 bg-primary">continue as guest</div>
+        <div class="p-2 bg-danger">zeevik</div>
+      </div>
+      <hr />
+      <div class="p-2 d-flex justify-content-end bg-secondary text-white">
+        <div class="p-2 bg-info">register as new user</div>
+        <div class="p-2 bg-warning">login to system</div>
+        <div class="p-2 bg-primary">continue as guest</div>
+        <div class="p-2 bg-danger">zeevik</div>
+      </div>
+      <hr />
+      <div class="p-2 d-flex justify-content-center bg-secondary text-white">
+        <div class="p-2 bg-info">register as new user</div>
+        <div class="p-2 bg-warning">login to system</div>
+        <div class="p-2 bg-primary">continue as guest</div>
+        <div class="p-2 bg-danger">zeevik</div>
+      </div>
+      <hr />
+      <div class="p-2 d-flex justify-content-between bg-secondary text-white">
+        <div class="p-2 bg-info">register as new user</div>
+        <div class="p-2 bg-warning">login to system</div>
+        <div class="p-2 bg-primary">continue as guest</div>
+        <div class="p-2 bg-danger">zeevik</div>
+      </div>
+      <hr />
+      <div class="p-2 d-flex justify-content-evenly bg-secondary text-white">
+        <div class="p-2 bg-info">register as new user</div>
+        <div class="p-2 bg-warning">login to system</div>
+        <div class="p-2 bg-primary">continue as guest</div>
+        <div class="p-2 bg-danger">zeevik</div>
+      </div>
+      <hr />
+      <div class="p-2 d-flex bg-secondary text-white">
+        <div class="p-2 flex-fill bg-info order-4">register as new user</div>
+        <!-- 4 -->
+        <div class="p-2 flex-fill bg-warning order-2">login to system</div>
+        <!-- 2 -->
+        <div class="p-2 flex-fill bg-primary order-3">continue as guest</div>
+        <!-- 3 -->
+        <div class="p-2 flex-fill bg-danger order-1">zeevik</div>
+        <!-- 1-->
       </div>
     </div>
   </body>
