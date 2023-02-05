@@ -34,13 +34,15 @@
       //   console.log("All victims :" + result);
 
       //הציגו את לוח הכפל - עד 100
+      var result = "";
       for (var row = 1; row <= 10; row++) {
-        var result = "";
         for (var col = 1; col <= 10; col++) {
           result += row * col + "\t";
         }
-        console.log(result);
+        result += "\n";
       }
+
+      console.log(result);
     </script>
   </body>
 </html>
