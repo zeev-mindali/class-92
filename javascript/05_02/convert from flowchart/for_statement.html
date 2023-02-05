@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For statement</title>
+  </head>
+  <body>
+    <script>
+      //   var num1 = +prompt("enter first number");
+      //   var num2 = +prompt("enter second number");
+      //   for (var counter = num1; counter <= num2; counter++) {
+      //     console.log(counter);
+      //     console.log("===============");
+
+      //   }
+
+      //תרגיל כיתה: קלטו 5 מספרים והציגו את הסכום והמוצע שלהם
+      //   var total = 0;
+      //   for (var counter = 0; counter < 5; counter++) {
+      //     var userNum = +prompt("enter a number");
+      //     total += userNum;
+      //   }
+      //   console.log("total: " + total);
+      //   console.log("avg: " + total / 5);
+
+      // קלטו 5 שמות מהמשתמש והציגו את כל חמשת השמות בשורה אחת
+      //   var result = "";
+      //   for (var counter = 0; counter < 5; counter++) {
+      //     var name = prompt("enter victim name");
+      //     result += name + " ";
+      //   }
+      //   console.log("All victims :" + result);
+
+      //הציגו את לוח הכפל - עד 100
+      for (var row = 1; row <= 10; row++) {
+        var result = "";
+        for (var col = 1; col <= 10; col++) {
+          result += row * col + "\t";
+        }
+        console.log(result);
+      }
+    </script>
+  </body>
+</html>

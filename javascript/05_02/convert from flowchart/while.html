@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>While</title>
+  </head>
+  <body>
+    <script>
+      //var num=3596;
+      //alert("zeevik the fox!");
+      var num = +prompt("enter a number");
+      console.log(typeof num);
+      var temp = num,
+        digit = 0,
+        total = 0;
+
+      while (temp > 0) {
+        digit++;
+        total += temp % 10;
+        temp = Math.floor(temp / 10); //Math.floor(עיגול כלפי מטה, בשביל להוריד שארית)
+        //3965.2354=> 3965
+      }
+      console.log("total digits:" + digit);
+      var a = 2;
+      console.log(5 / a);
+    </script>
+  </body>
+</html>

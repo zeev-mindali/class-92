@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>targil while</title>
+  </head>
+  <body>
+    <script>
+      //   var max = +prompt("enter maximum number");
+      //   var den = +prompt("enter den number");
+      //   var temp = den;
+      //   while (temp <= max) {
+      //     console.log(temp);
+      //     temp += den;
+      //   }
+
+      //   var num1 = +prompt("enter number");
+      //   var num2 = +prompt("enter divider");
+      //   var result = num1;
+      //   counter = 1;
+      //   while (counter < num2) {
+      //     result += num1;
+      //     counter++;
+      //   }
+      //   alert(result);
+
+      //קלטו שעה ושעה להוספה, והציגו את התוצאה במצב של 24 שעות
+      var num1 = +prompt("start hour");
+      var num2 = +prompt("add hours");
+
+      var result = (num1 + num2) % 24;
+
+      //   if (result < 10) {
+      //     result = "0" + result;
+      //   }
+
+      alert(result < 10 ? "0" + result : result);
+    </script>
+  </body>
+</html>
