@@ -33,6 +33,8 @@ const addNumber = () => {
     default:
       alert("אביתרררררררררררר");
   }
+  document.getElementById("userTel").value = "";
+  document.getElementById("reqService").value = "Sales";
 };
 
 const createSales = () => {
