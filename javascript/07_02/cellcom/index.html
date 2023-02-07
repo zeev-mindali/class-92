@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CellKlum</title>
+    <link href="css/cellcom.css" rel="stylesheet" />
+    <script src="js/cellcom.js"></script>
+  </head>
+  <body>
+    <h1>Welcome to CellKlum</h1>
+    <div class="Waiting">
+      <div class="Box" id="lab">
+        Lab Waiting list
+        <hr />
+      </div>
+      <div class="Box" id="service">
+        Service Waiting list
+        <hr />
+      </div>
+      <div class="Box" id="sales">
+        Sales Waiting list
+        <hr />
+        <table id="tSales"></table>
+      </div>
+    </div>
+    <!-- get service -->
+    <br /><br /><br />
+    <div class="Service">
+      <div class="Box">
+        <span class="myHeader">Lab Service</span><br />
+        <span id="s_lab" class="Phone">Free</span>
+        <br />
+        <button id="n_lab" class="nextButton">Next</button>
+      </div>
+      <div class="Box">
+        <span class="myHeader">Service</span><br />
+        <span id="s_service" class="Phone">Free</span>
+        <br />
+        <button id="n_service" class="nextButton">Next</button>
+      </div>
+      <div class="Box">
+        <span class="myHeader">Sales</span><br />
+        <span id="s_sales" class="Phone">Free</span>
+        <br />
+        <button id="n_sales" class="nextButton">Next</button>
+      </div>
+    </div>
+    <br /><br /><br />
+    <div class="inputBox">
+      <input type="tel" id="userTel" placeholder="Phone number" />
+      <select id="reqService">
+        <option>Sales</option>
+        <option>Service</option>
+        <option>Lab</option>
+      </select>
+      <button class="addButton" onclick="addNumber()">Add</button>
+    </div>
+    <br />
+    <span class="myHeader">12:00:00</span>
+  </body>
+</html>
