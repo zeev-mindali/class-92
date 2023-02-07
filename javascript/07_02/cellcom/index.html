@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CellKlum</title>
     <link href="css/cellcom.css" rel="stylesheet" />
-    <script src="js/cellcom.js"></script>
+    <script defer src="js/cellcom.js"></script>
   </head>
   <body>
     <h1>Welcome to CellKlum</h1>
@@ -14,10 +14,12 @@
       <div class="Box" id="lab">
         Lab Waiting list
         <hr />
+        <table id="tLab"></table>
       </div>
       <div class="Box" id="service">
         Service Waiting list
         <hr />
+        <table id="tService"></table>
       </div>
       <div class="Box" id="sales">
         Sales Waiting list
@@ -32,19 +34,19 @@
         <span class="myHeader">Lab Service</span><br />
         <span id="s_lab" class="Phone">Free</span>
         <br />
-        <button id="n_lab" class="nextButton">Next</button>
+        <button class="nextButton" onclick="nextLab()">Next</button>
       </div>
       <div class="Box">
         <span class="myHeader">Service</span><br />
         <span id="s_service" class="Phone">Free</span>
         <br />
-        <button id="n_service" class="nextButton">Next</button>
+        <button class="nextButton" onclick="nextService()">Next</button>
       </div>
       <div class="Box">
         <span class="myHeader">Sales</span><br />
         <span id="s_sales" class="Phone">Free</span>
         <br />
-        <button id="n_sales" class="nextButton">Next</button>
+        <button class="nextButton" onclick="nextSales()">Next</button>
       </div>
     </div>
     <br /><br /><br />
@@ -58,6 +60,6 @@
       <button class="addButton" onclick="addNumber()">Add</button>
     </div>
     <br />
-    <span class="myHeader">12:00:00</span>
+    <span class="myHeader" id="userTime"></span>
   </body>
 </html>

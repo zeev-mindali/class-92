@@ -19,14 +19,16 @@ const addNumber = () => {
   //Sales, Service, Lab
   switch (reqService) {
     case "Sales":
-      sales.push(userTel);
+      sales.unshift(userTel);
       createSales();
       break;
     case "Service":
-      service.push(userTel);
+      service.unshift(userTel);
+      createService();
       break;
     case "Lab":
-      lab.push(userTel);
+      lab.unshift(userTel);
+      createLab();
       break;
     default:
       alert("אביתרררררררררררר");
@@ -35,8 +37,45 @@ const addNumber = () => {
 
 const createSales = () => {
   var result = "";
-  for (var index = 0; index < sales.length; index++) {
+  for (var index = sales.length - 1; index >= 0; index--) {
     result += `<tr><td><span class="myHeader">${sales[index]}</span></td></tr>`;
   }
   document.getElementById("tSales").innerHTML = result;
 };
+
+const createLab = () => {
+  var result = "";
+  for (var index = 0; index < lab.length; index++) {
+    result += `<tr><td><span class="myHeader">${lab[index]}</span></td></tr>`;
+  }
+  document.getElementById("tLab").innerHTML = result;
+};
+
+const createService = () => {
+  var result = "";
+  for (var index = 0; index < service.length; index++) {
+    result += `<tr><td><span class="myHeader">${service[index]}</span></td></tr>`;
+  }
+  document.getElementById("tService").innerHTML = result;
+};
+
+const nextSales = () => {
+  //get last cell in the array => number || undefined
+  var nextNumber = sales.pop();
+  //pointer to html element in our document...
+  document.getElementById("s_sales").innerHTML =
+    //short if => condition?true:false;
+    nextNumber == undefined ? "FREE" : nextNumber;
+  createSales();
+};
+
+const nextLab = () => {};
+
+const nextService = () => {};
+
+// var myTime = new Date();
+// console.log(myTime.toLocaleString());
+
+setInterval(() => {
+  document.getElementById("userTime").innerHTML = new Date().toLocaleString();
+}, 1000);
