@@ -12,25 +12,37 @@
     <h1>My Friend List</h1>
     <hr />
     <div class="Box">
-      <form action="javascript:getData()">
+      <form action="javascript:getData()" id="friendForm">
         <input
           type="text"
           placeholder="Friend Name..."
           id="fName"
+          required
         /><br /><br />
         <input
           type="tel"
           placeholder="Friend Telephone..."
           id="fTel"
+          required
         /><br /><br />
         <input
           type="text"
           placeholder="Friend Photo....."
           id="fImg"
+          required
         /><br /><br />
         <input type="submit" value="submit" />
         <input type="reset" value="reset" />
       </form>
+
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>tel</th>
+          <th>photo</th>
+        </thead>
+        <tbody id="friendTable"></tbody>
+      </table>
     </div>
   </body>
 </html>
