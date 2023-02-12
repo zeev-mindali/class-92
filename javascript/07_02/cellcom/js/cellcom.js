@@ -62,6 +62,8 @@ const createService = () => {
 };
 
 const nextSales = () => {
+  //boolen show not show
+  var show = false;
   //get last cell in the array => number || undefined
   var nextNumber = sales.pop();
   //pointer to html element in our document...
@@ -69,6 +71,17 @@ const nextSales = () => {
     //short if => condition?true:false;
     nextNumber == undefined ? "FREE" : nextNumber;
   createSales();
+  setTimeout(() => {
+    clearInterval(cellBlink);
+    document.getElementById("s_sales").style.visibility = "visible";
+  }, 5000);
+
+  var cellBlink = setInterval(() => {
+    show = !show;
+    document.getElementById("s_sales").style.visibility = show
+      ? "visible"
+      : "hidden";
+  }, 500);
 };
 
 const nextLab = () => {};
