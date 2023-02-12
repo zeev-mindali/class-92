@@ -21,3 +21,10 @@ body {
 input {
   padding: 10px;
 }
+
+table > tr:nth-child(odd) {
+  background-color: aquamarine;
+}
+table > tr:nth-child(even) {
+  background-color: bisque;
+}
