@@ -13,6 +13,15 @@ const handleData = () => {
   newProduct.qty = pQty;
   newProduct.price = +pPrice;
   newProduct.url = pURL;
+  /*
+    json - Java Script Object Notation
+    {
+        name: "milk",
+        qty : 5,
+        price: 7,
+        url: https://www.tara.co.il/wp-content/uploads/2018/01/7290000474076.png
+    }
+  */
 
   //add our new shiny product to our collection of products...
   products.push(newProduct);
@@ -22,6 +31,9 @@ const handleData = () => {
 
   //create a table from our prodcuts collection
   makeTable();
+
+  //save to user hard disk..
+  localStorage.setItem("product_list", JSON.stringify(products));
 };
 
 const makeTable = () => {
@@ -63,3 +75,11 @@ const makeTable = () => {
   document.getElementById("productList").innerHTML = result;
   document.getElementById("totalPrice").innerHTML = totalPrice;
 };
+
+const retriveData = () => {
+  products = JSON.parse(localStorage.getItem("product_list"));
+  console.log(products);
+  makeTable();
+};
+
+retriveData();
