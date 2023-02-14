@@ -30,20 +30,36 @@ const makeTable = () => {
   //calculate total price of all products
   var totalPrice = 0;
   //iterate on products
-  for (var index = 0; index < products.length; index++) {
+  //   for (var index = 0; index < products.length; index++) {
+  //     result += `
+  //             <tr>
+  //                 <td><input type="checkbox"/></td>
+  //                 <td><img src="${products[index].url}" width="100"/></td>
+  //                 <td>${products[index].name}</td>
+  //                 <td>${products[index].qty}</td>
+  //                 <td>${products[index].price}</td>
+  //                 <td>${products[index].qty * products[index].price}</td>
+  //             </tr>
+  //         `;
+  //     totalPrice += products[index].qty * products[index].price;
+  //   }
+
+  //console.log(result);
+
+  products.map((item) => {
     result += `
             <tr>
                 <td><input type="checkbox"/></td>
-                <td><img src="${products[index].url}" width="100"/></td>
-                <td>${products[index].name}</td>
-                <td>${products[index].qty}</td>
-                <td>${products[index].price}</td>
-                <td>${products[index].qty * products[index].price}</td>
+                <td><img src="${item.url}" width="100"/></td>
+                <td>${item.name}</td>
+                <td>${item.qty}</td>
+                <td>${item.price}</td>
+                <td>${item.qty * item.price}</td>
             </tr>
         `;
-    totalPrice += products[index].qty * products[index].price;
-  }
-  //console.log(result);
+    totalPrice += item.qty * item.price;
+  });
+
   document.getElementById("productList").innerHTML = result;
   document.getElementById("totalPrice").innerHTML = totalPrice;
 };
