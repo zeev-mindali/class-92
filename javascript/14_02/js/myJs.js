@@ -76,6 +76,7 @@ const makeTable = () => {
   document.getElementById("totalPrice").innerHTML = totalPrice;
 };
 
+//zeev: i getting a null error, didn't found the problem...
 const retriveData = () => {
   products = JSON.parse(localStorage.getItem("product_list"));
   console.log(products);
