@@ -77,10 +77,16 @@ const makeTable = () => {
 };
 
 //zeev: i getting a null error, didn't found the problem...
+//elena: you didn't check if there is a data in the localstorage.
+//you got null becuase it returned null
+//i change the program, to check null and if there is a data, send it to the array
 const retriveData = () => {
-  products = JSON.parse(localStorage.getItem("product_list"));
-  console.log(products);
-  makeTable();
+  var myData = JSON.parse(localStorage.getItem("product_list"));
+  if (myData){
+    products = myData; 
+    //console.log(products);
+    makeTable();
+  }
 };
 
 retriveData();
