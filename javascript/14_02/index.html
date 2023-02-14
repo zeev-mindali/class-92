@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery list</title>
+    <script src="js/myJs.js"></script>
+    <link rel="stylesheet" href="css/myCss.css" />
+  </head>
+  <body>
+    <h1>Grocery List</h1>
+    <hr />
+    <div class="Box">
+      <form action="javascript:handleData()" id="productForm">
+        <input
+          type="text"
+          id="pName"
+          placeholder="Enter product name"
+        /><br /><br />
+        <input type="number" id="pQty" placeholder="Quantity" /><br /><br />
+        <input type="text" id="pPrice" placeholder="Price" /><br /><br />
+        <input type="url" id="pURL" placeholder="Enter URL image" /><br /><br />
+        <input type="submit" value="add product" />
+        <input type="reset" value="reset" />
+      </form>
+    </div>
+    <br /><br /><br />
+    <table>
+      <thead>
+        <th>done</th>
+        <th>image</th>
+        <th>name</th>
+        <th>qty</th>
+        <th>price</th>
+        <th>total</th>
+      </thead>
+      <tbody id="productList"></tbody>
+    </table>
+    <h1>
+      your total price <span class="totalPrice" id="totalPrice">0 </span>nis
+    </h1>
+  </body>
+</html>
