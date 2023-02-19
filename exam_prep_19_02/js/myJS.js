@@ -28,5 +28,4 @@ const getName = () => {
   result += `<h1>${userName} is so smart, even bibi is learning how to run a country from ${userName}<h1>`;
   document.getElementById("res").innerHTML = result;
   document.getElementById("myForm").reset();
-  //userName.value = "";
 };
