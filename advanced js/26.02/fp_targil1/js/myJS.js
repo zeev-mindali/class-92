@@ -10,6 +10,7 @@ const products = [
   "white bread",
   "chala bread",
 ];
+
 const searchMe = () => {
   const searchItem = document.getElementById("filterList").value;
   var result = "";
@@ -18,5 +19,3 @@ const searchMe = () => {
     .map((item) => (result += item + "<br/>"));
   document.getElementById("container").innerHTML = result;
 };
-
-//container
