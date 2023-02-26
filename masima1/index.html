@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>masima 1</title>
+    <script src="js/myjs.js"></script>
+    <link href="css/mycss.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>shopping cart</h1>
+    <hr />
+    <div class="Box">
+      <form id="itemForm" action="javascript:addProduct()">
+        <input
+          type="text"
+          placeholder="enter item description"
+          id="itemName"
+          required
+        /><br /><br />
+        <input
+          type="number"
+          placeholder="enter item price"
+          id="itemPrice"
+          required
+        /><br /><br />
+        <select id="itemType" required>
+          <option selected disabled>Choose item</option>
+          <option>Drinks</option>
+          <option>Meat</option>
+          <option>Dairy</option>
+          <option>Snacks</option>
+          <option>Basic</option></select
+        ><br /><br />
+        <input
+          type="url"
+          placeholder="item image"
+          id="itemImage"
+          required
+        /><br /><br />
+        <input type="submit" value="Add product" />
+        <input type="reset" value="Clear form" />
+      </form>
+    </div>
+    <hr />
+    <table>
+      <thead>
+        <th>id</th>
+        <th>image</th>
+        <th>name</th>
+        <th>price</th>
+        <th>type</th>
+        <th>delete</th>
+      </thead>
+      <tbody id="container"></tbody>
+    </table>
+  </body>
+</html>
