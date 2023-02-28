@@ -6,9 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>cities and street</title>
     <script defer src="js/myJS.js"></script>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div>
+      <h1>רחובות לפי עיר</h1>
+      <hr />
+      <select id="city" onchange="getStreet()"></select>
+      <br /><br />
       <select id="street"></select>
     </div>
   </body>
