@@ -123,3 +123,26 @@ String.prototype.spaceMeShir = function () {
 };
 
 //console.log(testMe.spaceMeShir());
+
+String.prototype.reverseMe = function () {
+  var result = "";
+  for (var counter = this.length - 1; counter >= 0; counter--) {
+    result += this[counter];
+  }
+
+  return result;
+};
+
+String.prototype.revElena = function () {
+  return this.split("").reverse().join("");
+};
+
+var ranTheKing = "רגע בפונקציה הראשונה שעשית, איפה אני רושם את זה?";
+console.log(ranTheKing.revElena());
+
+//var testRev = "ואז הזקנה התפצלה לשניים, ומתוכה יצא אור חזק של עבמים";
+//console.log(testRev);
+//console.log(testRev.reverseMe());
+
+var hello = "שלום";
+console.log(hello.reverseMe());
