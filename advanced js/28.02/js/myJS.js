@@ -47,7 +47,7 @@ Array.prototype.removeLast = function () {
 };
 
 const students = ["zeev", "ran", "shir", "elena", "lin", "Alon1"];
-
+// Ran LOL
 console.log(students.lastOne());
 console.log(students.removeLast());
 console.log(students);
