@@ -48,6 +48,30 @@ Array.prototype.removeLast = function () {
 
 const students = ["zeev", "ran", "shir", "elena", "lin", "Alon1"];
 // Ran LOL
-console.log(students.lastOne());
-console.log(students.removeLast());
-console.log(students);
+// console.log(students.lastOne());
+// console.log(students.removeLast());
+// console.log(students);
+
+String.prototype.stars = function () {
+  var result = "";
+  for (var counter = 0; counter < this.length + 4; counter++) {
+    result += "*";
+  }
+
+  result = `${result}\n* ${this} *\n${result}`;
+
+  return result;
+};
+const user = "Elena (Ani lo mavina)";
+console.log(user.stars());
+
+const victims = [
+  "zeev",
+  "Igal",
+  "LOL",
+  "Daniesl",
+  "Matan",
+  "Elena Atzbanit",
+  "Shahar",
+];
+victims.map((item) => console.log(item.stars()));
