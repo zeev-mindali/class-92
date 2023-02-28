@@ -1,0 +1,11 @@
+body {
+  text-align: center;
+}
+
+.Box {
+  box-shadow: 2px 2px 5px 2px grey;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 300px;
+  margin: auto;
+}
