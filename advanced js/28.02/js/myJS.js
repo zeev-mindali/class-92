@@ -63,15 +63,63 @@ String.prototype.stars = function () {
   return result;
 };
 const user = "Elena (Ani lo mavina)";
-console.log(user.stars());
+// console.log(user.stars());
 
-const victims = [
-  "zeev",
-  "Igal",
-  "LOL",
-  "Daniesl",
-  "Matan",
-  "Elena Atzbanit",
-  "Shahar",
-];
-victims.map((item) => console.log(item.stars()));
+// const victims = [
+//   "zeev",
+//   "Igal",
+//   "LOL",
+//   "Daniesl",
+//   "Matan",
+//   "Elena Atzbanit",
+//   "Shahar",
+// ];
+// victims.map((item) => console.log(item.stars()));
+
+//function 2=>4 , 4=>16
+
+Number.prototype.power2 = function () {
+  return this * this;
+};
+
+console.log((5).power2());
+
+//atzart 5!=>1*2*3*4*5
+
+//number,string,boolean,array,object
+//Number,String,Boolean,Array,Object
+
+Number.prototype.atzaret = function () {
+  var result = 1;
+  for (counter = 2; counter <= this; counter++) {
+    result *= counter;
+  }
+  return result;
+};
+
+String.prototype.lastName = function () {
+  var result = this.split(" ");
+  return result[result.length - 1];
+};
+
+// var kartzya = "ran tzioni the king";
+// console.log(kartzya.lastName());
+
+//zeev => z e e v
+
+String.prototype.spaceMe = function () {
+  var result = "";
+  for (var counter = 0; counter < this.length; counter++) {
+    result += this[counter] + " ";
+  }
+  return result;
+};
+
+var testMe = "ata kartzya";
+//console.log(testMe.spaceMe());
+
+String.prototype.spaceMeShir = function () {
+  return this.split("").join(" ");
+};
+
+//console.log(testMe.spaceMeShir());
