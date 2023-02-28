@@ -12,7 +12,7 @@ const findCar = () => {
 
 const displayInfo = (carData) => {
   //where we want to sent it, or present it....
-  console.log(carData);
+  //console.log(carData);
   document.getElementById("res").innerHTML = `
     <h1>${carData.mispar_rechev}</h1><hr/>
     <h2>${carData.tozeret_nm}</h2>
@@ -20,13 +20,34 @@ const displayInfo = (carData) => {
     <h3>${carData.tzeva_rechev}</h3>
     <h3>${carData.shnat_yitzur}</h3>
     <hr/>
-    <h1>${handleDate(carData.tokef_dt)}</h1>
+    <h1>${carData.tokef_dt.toNormalDate()}</h1>
   `;
 };
 
+//<h1>${handleDate(carData.tokef_dt)}</h1>
 // 0   1  2
 //2023-07-11
-const handleDate = (oldDate) => {
-  const ymd = oldDate.split("-");
+// const handleDate = (oldDate) => {
+//   console.log("type: ", typeof oldDate);
+//   const ymd = oldDate.split("-");
+//   return ymd[2] + "/" + ymd[1] + "/" + ymd[0];
+// };
+
+String.prototype.toNormalDate = function () {
+  const ymd = this.split("-");
   return ymd[2] + "/" + ymd[1] + "/" + ymd[0];
 };
+
+Array.prototype.lastOne = function () {
+  return this[this.length - 1];
+};
+
+Array.prototype.removeLast = function () {
+  return this.pop();
+};
+
+const students = ["zeev", "ran", "shir", "elena", "lin", "Alon1"];
+
+console.log(students.lastOne());
+console.log(students.removeLast());
+console.log(students);
