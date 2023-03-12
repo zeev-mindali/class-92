@@ -23,3 +23,5 @@ const changeSpeed = (myValue) => {
       colors[Math.floor(Math.random() * colors.length)];
   }, myValue);
 };
+
+
