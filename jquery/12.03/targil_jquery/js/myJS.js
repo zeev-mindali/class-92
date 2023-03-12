@@ -15,6 +15,8 @@
 
 const allCountriesURL = "https://restcountries.com/v3.1/all";
 let allCountries = [];
+let total = 0;
+
 //document ready
 $(async () => {
   allCountries = await $.get(allCountriesURL);
@@ -24,13 +26,17 @@ $(async () => {
 
 const createCountries = (allCountries) => {
   allCountries.map((item) => {
+    total += item.population;
     $("#container").append(
       `<div class="Box">
       <b>${item.name.common}</b><hr/>
-        <img src="${item.flags.png}" width="100"/>
+        <img src="${item.flags.png}" width="100" height="50"/><br/>
+        ${item.capital}<br/>
+        ${item.population.toLocaleString()}
       </div>`
     );
   });
+  $("#total").html(total.toLocaleString());
 };
 
 // $(function () {
