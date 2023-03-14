@@ -23,8 +23,7 @@ $(async () => {
   allCountries = await $.get(allCountriesURL);
   //console.log(allCountries.length);
   $("#myRange").attr("max", allCountries.length);
-
-  createCountries(allCountries.slice(1, this.value), 1);
+  createCountries(1);
 });
 
 // const displaySliderValue = (myValue) => {
@@ -33,14 +32,17 @@ $(async () => {
 
 $(() => {
   $("#myRange").on("change", function () {
-    console.log(this.value);
+    //console.log(this.value);
     $("#toDisplay").html(this.value);
-    createCountries(allCountries.slice(1, this.value), this.value);
+    createCountries(this.value);
   });
 });
 
-const createCountries = (allCountries, displayLength) => {
-  allCountries.map((item) => {
+const createCountries = (displayLength) => {
+    //clear the container....
+  $("#container").empty();
+  const tempCountries = allCountries.slice(0, displayLength);
+  tempCountries.map((item) => {
     //calculation
     total += item.population;
 
