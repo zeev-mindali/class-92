@@ -15,3 +15,13 @@ body {
   margin-left: 50px;
   margin-bottom: 20px;
 }
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+}

@@ -17,7 +17,7 @@ const allCountriesURL = "https://restcountries.com/v3.1/all";
 let allCountries = [];
 let total = 0;
 let myContinents = {};
-
+let contNames = [];
 //document ready
 $(async () => {
   allCountries = await $.get(allCountriesURL);
@@ -39,8 +39,11 @@ $(() => {
 });
 
 const createCountries = (displayLength) => {
-    //clear the container....
+  //clear the container....
   $("#container").empty();
+  //reinit to myContinents
+  myContinents = {};
+  contNames = [];
   const tempCountries = allCountries.slice(0, displayLength);
   tempCountries.map((item) => {
     //calculation
@@ -50,6 +53,7 @@ const createCountries = (displayLength) => {
     if (!myContinents[item.continents]) {
       //create our new continet
       myContinents[item.continents] = 1;
+      contNames.push(item.continents);
     } else {
       //add 1 to existing continent
       myContinents[item.continents] += 1;
@@ -64,6 +68,33 @@ const createCountries = (displayLength) => {
       </div>`
     );
   });
+  createContinents();
+};
+
+const createContinents = () => {
+  $("#region").html(`
+        <table>
+            <thead>
+                ${getTdNames()}
+            </thead>
+            <tbody>
+                ${getTdTotal()}
+            </tbody>
+        </table>
+    `);
+};
+
+const getTdNames = () => {
+  let result = "";
+  contNames.map((item) => (result += `<td>${item}</td>`));
+
+  return result;
+};
+
+const getTdTotal = () => {
+  let result = "";
+  contNames.map((item) => (result += `<td>${myContinents[item]}</td>`));
+  return result;
 };
 
 // $(function () {
