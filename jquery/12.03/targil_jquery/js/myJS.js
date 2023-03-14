@@ -22,16 +22,30 @@ let myContinents = {};
 $(async () => {
   allCountries = await $.get(allCountriesURL);
   //console.log(allCountries.length);
-  createCountries(allCountries);
+  $("#myRange").attr("max", allCountries.length);
+
+  createCountries(allCountries.slice(1, this.value), 1);
 });
 
-const createCountries = (allCountries) => {
+// const displaySliderValue = (myValue) => {
+//   $("#toDisplay").html(myValue);
+// };
+
+$(() => {
+  $("#myRange").on("change", function () {
+    console.log(this.value);
+    $("#toDisplay").html(this.value);
+    createCountries(allCountries.slice(1, this.value), this.value);
+  });
+});
+
+const createCountries = (allCountries, displayLength) => {
   allCountries.map((item) => {
     //calculation
     total += item.population;
 
     //continents
-    if (myContinents[item.continents] == null) {
+    if (!myContinents[item.continents]) {
       //create our new continet
       myContinents[item.continents] = 1;
     } else {
@@ -48,8 +62,6 @@ const createCountries = (allCountries) => {
       </div>`
     );
   });
-  $("#total").html(total.toLocaleString());
-  console.log(myContinents);
 };
 
 // $(function () {
