@@ -1,13 +1,14 @@
 {
-  "name": "my first typescript file",
+  "name": "19.03",
   "version": "1.0.0",
-  "description": "this is a file, so elena will now how to do npm init -y",
-  "main": "index.ts",
+  "description": "",
+  "main": "oop.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon --exec ts-node oop.ts"
   },
   "keywords": [],
-  "author": "zeev mindali",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.21",
