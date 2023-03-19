@@ -1,0 +1,17 @@
+{
+  "name": "targil1_19_03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "animal.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon --exec ts-node animal.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.21",
+    "ts-node": "^10.9.1"
+  }
+}
