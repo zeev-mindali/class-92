@@ -1,0 +1,15 @@
+.SingleItem {
+  text-align: left;
+}
+
+.Grid-Parent {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-gap: 20px;
+
+  width: 100%;
+}
+
+.Grid-Child {
+  margin: 10px;
+}

@@ -2,6 +2,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Home from "../Home/Home";
 import Menu from "../Menu/Menu";
+import YouTube from "../YouTube/YouTube";
 import "./MainLayout.css";
 
 function MainLayout(): JSX.Element {
@@ -14,7 +15,7 @@ function MainLayout(): JSX.Element {
         <Menu />
       </aside>
       <main>
-        <Home />
+        <YouTube />
       </main>
       <footer>
         <Footer />
