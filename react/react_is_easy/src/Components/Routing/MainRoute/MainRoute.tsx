@@ -5,6 +5,7 @@ import About from "../../Pages/About/About";
 import AddSongForm from "../../Pages/AddSongForm/AddSongForm";
 import MyFavorites from "../../Pages/MyFavorites/MyFavorites";
 import Page404 from "../../Pages/Page404/Page404";
+import Player from "../../Pages/Player/Player";
 import SongSearch from "../../Pages/SongSearch/SongSearch";
 import "./MainRoute.css";
 
@@ -18,6 +19,7 @@ function MainRoute(): JSX.Element {
                 <Route path="/addSong" element={<AddSongForm />} />
                 <Route path="/favorites" element={<MyFavorites />} />
                 <Route path="/search" element={<SongSearch />} />
+                <Route path="/player/:title/:url" element={<Player />} />
                 <Route path="*" element={<Page404 />} />
             </Routes>
         </div>
@@ -25,3 +27,5 @@ function MainRoute(): JSX.Element {
 }
 
 export default MainRoute;
+
+
