@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+}
+table,td,tr{
+    border:1px solid black;
+    border-collapse: collapse;
+}
+input{
+    width: 30px;
+    padding: 20px;
+    font-size: 50px;
+}

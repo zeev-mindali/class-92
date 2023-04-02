@@ -97,6 +97,14 @@ const getTdTotal = () => {
   return result;
 };
 
+const verTable = ()=>{
+    let result="";
+    contNames.map(item=>{
+        `<td>${item}</td><td>${myContinents[item]}</td>`
+    });
+    return result;
+}
+
 // $(function () {
 //   //   countries.map((item) =>
 //   //     $("#container").append(`<div class="Box"><b>${item}</b><hr/></div>`)
