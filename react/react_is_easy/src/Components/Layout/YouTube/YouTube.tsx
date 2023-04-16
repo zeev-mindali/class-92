@@ -5,6 +5,10 @@ import { useEffect, useState } from "react";
 
 function YouTube(): JSX.Element {
     const [songs,setSongs] = useState([]);
+    useEffect(()=>{
+        setSongs(JSON.parse(localStorage.getItem("songs") as any))
+    },[]);
+
     /*
     const songs = [
         {
@@ -45,22 +49,7 @@ function YouTube(): JSX.Element {
         },
     ];
     */
-
-    // for saving our songs list
-    // const saveData = ()=>{
-    //     localStorage.setItem("songs",JSON.stringify(songs));
-    // }
-
-    // saveData();
-    // let localSongs = localStorage.getItem("songs");
-    // console.log(localSongs)
-    // let songs:any[]= JSON.parse(localSongs);
-    // log(songs);
-
-    useEffect(()=>{
-        setSongs(JSON.parse(localStorage.getItem("songs") as any))
-    },[])
-
+    //localStorage.setItem("songs",JSON.stringify(songs));
     return (
         <div className="YouTube">
             {songs.map((item) => (

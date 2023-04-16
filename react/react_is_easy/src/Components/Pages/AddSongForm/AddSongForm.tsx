@@ -23,18 +23,16 @@ function AddSongForm(): JSX.Element {
             //console.log(response.data.items[0].snippet.title);
             setTitle(response.data.items[0].snippet.channelTitle)
             setDesc(response.data.items[0].snippet.title);
-            console.log(response.data.items[0].snippet.description)
             setImage(response.data.items[0].snippet.thumbnails.medium.url);
         })
     }
 
     const addNewSong = ()=>{
-       let allSongs = JSON.parse(localStorage.getItem("songs") as any);
-       const newSong = new Song(songDesc,songImg,songTitle,songURL);
-       allSongs.push(newSong);
-       localStorage.setItem("songs",JSON.stringify(allSongs));
-       //move to main page (compoent=>youtube)
-       navigate("/");
+        let allSongs = JSON.parse(localStorage.getItem("songs") as any);
+        const newSong = new Song(songDesc,songImg,songTitle,songURL);
+        allSongs.push(newSong);
+        localStorage.setItem("songs",JSON.stringify(allSongs));
+        navigate("/");
     }
 
      return (
