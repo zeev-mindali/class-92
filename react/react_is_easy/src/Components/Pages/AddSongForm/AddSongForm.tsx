@@ -23,8 +23,8 @@ function AddSongForm(): JSX.Element {
             setImage(response.data.items[0].snippet.thumbnails.medium.url);
         })
     }
-    //kill adam
-    return (
+    
+     return (
         <div className="AddSongForm">
             <h1>add new song</h1><hr />
             <input type="url" onKeyUp={(args)=>{
