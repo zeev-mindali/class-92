@@ -42,6 +42,17 @@ function YouTube(): JSX.Element {
         },
     ];
 
+
+    // for saving our songs list
+    // const saveData = ()=>{
+    //     localStorage.setItem("songs",JSON.stringify(songs));
+    // }
+
+    // saveData();
+    // let localSongs = localStorage.getItem("songs");
+    // console.log(localSongs)
+    // let songs:any[]= JSON.parse(localSongs);
+    // log(songs);
     return (
         <div className="YouTube">
             {songs.map((item) => (
