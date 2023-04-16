@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import SingleItem from "./SingleItem/SingleItem";
 import "./YouTube.css";
+import { useEffect, useState } from "react";
 
 function YouTube(): JSX.Element {
+    const [songs,setSongs] = useState([]);
+    /*
     const songs = [
         {
             url: "https://www.youtube.com/watch?v=R0ebIzABQm0",
@@ -41,7 +44,7 @@ function YouTube(): JSX.Element {
             img: "https://i.ytimg.com/vi/E_hzOuAK5gY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCmYI2j_1OiiVPS_QMPdas6oRHX-Q",
         },
     ];
-
+    */
 
     // for saving our songs list
     // const saveData = ()=>{
@@ -53,14 +56,19 @@ function YouTube(): JSX.Element {
     // console.log(localSongs)
     // let songs:any[]= JSON.parse(localSongs);
     // log(songs);
+
+    useEffect(()=>{
+        setSongs(JSON.parse(localStorage.getItem("songs") as any))
+    },[])
+
     return (
         <div className="YouTube">
             {songs.map((item) => (
                 <SingleItem
-                    url={item.url}
-                    title={item.title}
-                    descrption={item.descption}
-                    img={item.img}
+                    url={item["url"]}
+                    title={item["title"]}
+                    descrption={item["descption"]}
+                    img={item["img"]}
 
                 />
             ))}
