@@ -21,14 +21,14 @@ export function addCategoryAction(newCategory: string): CategoryAction {
   return { type: CategoriesActionType.addCategory, payload: newCategory };
 }
 
-export function updateCategoryAction(category: string): CategoryAction {
-  return { type: CategoriesActionType.updateCategory, payload: category };
-}
-
-export function remoteCategoryAction(category: {
+export function updateCategoryAction(category: {
   oldName: string;
   newName: string;
 }): CategoryAction {
+  return { type: CategoriesActionType.updateCategory, payload: category };
+}
+
+export function removeCategoryAction(category: string): CategoryAction {
   return { type: CategoriesActionType.removeCategory, payload: category };
 }
 
