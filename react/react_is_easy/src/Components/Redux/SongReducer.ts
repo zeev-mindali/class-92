@@ -12,6 +12,7 @@ export enum SongActionType {
   searchSong = "searchSong",
 }
 
+//action data structure
 export interface SongAction {
   type: SongActionType;
   payload?: any;
