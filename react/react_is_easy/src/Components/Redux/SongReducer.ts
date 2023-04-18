@@ -2,7 +2,7 @@ import Song from "../modal/Song";
 
 //state of songs
 export class SongState {
-  public songs: Song[] = [];
+  public allSongs: Song[] = [];
 }
 
 //what action i will use....
@@ -10,6 +10,7 @@ export enum SongActionType {
   addSong = "addSong",
   deleteSong = "deleteSong",
   searchSong = "searchSong",
+  downloadSongs = "downloadSongs",
 }
 
 //action data structure
@@ -31,6 +32,10 @@ export function searchSongAction(songName: string): SongAction {
   return { type: SongActionType.searchSong, payload: songName };
 }
 
+export function downloadSongsAction(allSongs: Song[]) {
+  return { type: SongActionType.downloadSongs, payload: allSongs };
+}
+
 //reducer - we must use the function signature
 export function SongReducer(
   currentState: SongState = new SongState(),
@@ -40,19 +45,22 @@ export function SongReducer(
 
   switch (action.type) {
     case SongActionType.addSong:
-      newState.songs.push(action.payload);
+      newState.allSongs.push(action.payload);
       break;
 
     case SongActionType.deleteSong:
-      newState.songs = newState.songs.filter(
+      newState.allSongs = newState.allSongs.filter(
         (item) => item.title != action.payload
       );
       break;
 
     case SongActionType.searchSong:
-      newState.songs = newState.songs.filter((item) =>
+      newState.allSongs = newState.allSongs.filter((item) =>
         item.title.includes(action.payload)
       );
+      break;
+    case SongActionType.downloadSongs:
+      newState.allSongs = action.payload;
       break;
   }
   return newState;

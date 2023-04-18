@@ -2,14 +2,23 @@ import { useNavigate } from "react-router-dom";
 import SingleItem from "./SingleItem/SingleItem";
 import "./YouTube.css";
 import { useEffect, useState } from "react";
+import { youtube } from "../../Redux/Store";
+import { downloadSongsAction } from "../../Redux/SongReducer";
 
 function YouTube(): JSX.Element {
-    const [songs,setSongs] = useState([]);
-    useEffect(()=>{
-        setSongs(JSON.parse(localStorage.getItem("songs") as any))
-    },[]);
+  //const [songs,setSongs] = useState<Song[]>([]);
+  const [refresh, setRefresh] = useState(false);
+  useEffect(() => {
+    if (youtube.getState().songs.allSongs.length < 1) {
+      //setSongs(JSON.parse(localStorage.getItem("songs") as any))
+      youtube.dispatch(
+        downloadSongsAction(JSON.parse(localStorage.getItem("songs") as any))
+      );
+      setRefresh(true);
+    }
+  }, []);
 
-    /*
+  /*
     const songs = [
         {
             url: "https://www.youtube.com/watch?v=R0ebIzABQm0",
@@ -49,20 +58,19 @@ function YouTube(): JSX.Element {
         },
     ];
     */
-    //localStorage.setItem("songs",JSON.stringify(songs));
-    return (
-        <div className="YouTube">
-            {songs.map((item) => (
-                <SingleItem
-                    url={item["url"]}
-                    title={item["title"]}
-                    descrption={item["descption"]}
-                    img={item["img"]}
-
-                />
-            ))}
-        </div>
-    );
+  //localStorage.setItem("songs",JSON.stringify(songs));
+  return (
+    <div className="YouTube">
+      {youtube.getState().songs.allSongs.map((item) => (
+        <SingleItem
+          url={item["url"]}
+          title={item["title"]}
+          descrption={item["descption"]}
+          img={item["img"]}
+        />
+      ))}
+    </div>
+  );
 }
 
 export default YouTube;
