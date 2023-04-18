@@ -8,7 +8,6 @@ export enum CategoriesActionType {
   addCategory = "addCategory",
   updateCategory = "updateCategory",
   removeCategory = "removeCategory",
-  theBest = "theBest",
 }
 
 //action data structure
@@ -26,12 +25,11 @@ export function updateCategoryAction(category: string): CategoryAction {
   return { type: CategoriesActionType.updateCategory, payload: category };
 }
 
-export function remoteCategoryAction(category: string): CategoryAction {
+export function remoteCategoryAction(category: {
+  oldName: string;
+  newName: string;
+}): CategoryAction {
   return { type: CategoriesActionType.removeCategory, payload: category };
-}
-
-export function ShirCategoryAction(shir: object): CategoryAction {
-  return { type: CategoriesActionType.theBest, payload: shir };
 }
 
 //reducer
@@ -42,6 +40,21 @@ export function CategoriesReducer(
   const newState = { ...currentState }; //spread opreator
 
   switch (action.type) {
+    case CategoriesActionType.addCategory:
+      newState.categories.push(action.payload);
+      break;
+    case CategoriesActionType.removeCategory:
+      newState.categories = newState.categories.filter(
+        (item) => item != action.payload
+      );
+      break;
+
+    case CategoriesActionType.updateCategory:
+      newState.categories = newState.categories.filter(
+        (item) => item != action.payload["oldName"]
+      );
+      newState.categories.push(action.payload["newName"]);
+      break;
   }
 
   return newState;
