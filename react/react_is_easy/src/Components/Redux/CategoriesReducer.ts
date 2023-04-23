@@ -1,61 +1,82 @@
-//create our state
+import { Category } from "../modal/Category";
+
+//1. reducer state
 export class CategoriesState {
-  public categories: string[] = [];
+  //public categories:string[] = [];
+  public categories: Category[] = [];
 }
 
-//action types
+//2. action types
 export enum CategoriesActionType {
   addCategory = "addCategory",
   updateCategory = "updateCategory",
-  removeCategory = "removeCategory",
+  deleteCategory = "deleteCategory",
+  downloadCategory = "downloadCategory",
+  clearAllCategories = "clearAllCategories",
 }
 
-//action data structure
+//3. action data structure
 export interface CategoryAction {
   type: CategoriesActionType;
   payload?: any;
 }
 
-//function for dispatch
-export function addCategoryAction(newCategory: string): CategoryAction {
+//4. function for dispatch
+export const addCategoryAction = (newCategory: Category): CategoryAction => {
   return { type: CategoriesActionType.addCategory, payload: newCategory };
-}
+};
 
-export function updateCategoryAction(category: {
-  oldName: string;
-  newName: string;
-}): CategoryAction {
-  return { type: CategoriesActionType.updateCategory, payload: category };
-}
+//                                    {1,rock}=>{1,Rock'n'Roll}
+export const updateCategoryAction = (
+  updateCategory: Category
+): CategoryAction => {
+  return { type: CategoriesActionType.updateCategory, payload: updateCategory };
+};
 
-export function removeCategoryAction(category: string): CategoryAction {
-  return { type: CategoriesActionType.removeCategory, payload: category };
-}
+export const deleteCategoryAction = (id: number): CategoryAction => {
+  return { type: CategoriesActionType.deleteCategory, payload: id };
+};
 
-//reducer
-export function CategoriesReducer(
+export const downloadCategoryAction = (
+  allCategories: Category[]
+): CategoryAction => {
+  return {
+    type: CategoriesActionType.downloadCategory,
+    payload: allCategories,
+  };
+};
+
+export const clearAllCategoriesAction = (): CategoryAction => {
+  return { type: CategoriesActionType.clearAllCategories };
+};
+
+//5. our reducer
+export const CategoriesReducer = (
   currentState: CategoriesState = new CategoriesState(),
   action: CategoryAction
-): CategoriesState {
-  const newState = { ...currentState }; //spread opreator
-
+): CategoriesState => {
+  const newState = { ...currentState };
   switch (action.type) {
     case CategoriesActionType.addCategory:
-      newState.categories.push(action.payload);
+      newState.categories = [...newState.categories, action.payload];
       break;
-    case CategoriesActionType.removeCategory:
-      newState.categories = newState.categories.filter(
-        (item) => item != action.payload
+
+    case CategoriesActionType.clearAllCategories:
+      newState.categories = [];
+      break;
+
+    case CategoriesActionType.deleteCategory:
+      newState.categories = [...newState.categories].filter(
+        (item) => item.id !== action.payload
       );
+      break;
+
+    case CategoriesActionType.downloadCategory:
+      newState.categories = action.payload;
       break;
 
     case CategoriesActionType.updateCategory:
-      newState.categories = newState.categories.filter(
-        (item) => item != action.payload["oldName"]
-      );
-      newState.categories.push(action.payload["newName"]);
       break;
   }
-
   return newState;
-}
+};
