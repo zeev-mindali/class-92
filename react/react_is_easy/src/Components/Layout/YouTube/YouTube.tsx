@@ -74,6 +74,7 @@ function YouTube(): JSX.Element {
           title={item["title"]}
           descrption={item["descption"]}
           img={item["img"]}
+          id={item["id"]}
         />
       ))}
     </div>

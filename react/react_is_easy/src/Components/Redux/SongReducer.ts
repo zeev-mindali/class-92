@@ -49,9 +49,10 @@ export function SongReducer(
       break;
 
     case SongActionType.deleteSong:
-      newState.allSongs = newState.allSongs.filter(
+      newState.allSongs = [...newState.allSongs].filter(
         (item) => item.id != action.payload
       );
+      localStorage.setItem("songs", JSON.stringify(newState.allSongs));
       break;
 
     case SongActionType.searchSong:
