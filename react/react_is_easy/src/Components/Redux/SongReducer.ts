@@ -24,8 +24,8 @@ export function addSongAction(newSong: Song): SongAction {
   return { type: SongActionType.addSong, payload: newSong };
 }
 
-export function deleteSongAction(songName: string): SongAction {
-  return { type: SongActionType.deleteSong, payload: songName };
+export function deleteSongAction(id: number): SongAction {
+  return { type: SongActionType.deleteSong, payload: id };
 }
 
 export function searchSongAction(songName: string): SongAction {
@@ -45,12 +45,12 @@ export function SongReducer(
 
   switch (action.type) {
     case SongActionType.addSong:
-      newState.allSongs.push(action.payload);
+      newState.allSongs = [...newState.allSongs, action.payload];
       break;
 
     case SongActionType.deleteSong:
       newState.allSongs = newState.allSongs.filter(
-        (item) => item.title != action.payload
+        (item) => item.id != action.payload
       );
       break;
 

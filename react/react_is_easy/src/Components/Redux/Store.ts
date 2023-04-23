@@ -10,4 +10,10 @@ const reducers = combineReducers({
 });
 
 //combine all reducers to one single store....
-export const youtube = configureStore({ reducer: reducers });
+export const youtube = configureStore({
+  reducer: reducers,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ serializableCheck: false }), //do not look on serialization errors
+});
+
+//middleware => התערבות מרגע הכנת המידע ועד להצגה שלו

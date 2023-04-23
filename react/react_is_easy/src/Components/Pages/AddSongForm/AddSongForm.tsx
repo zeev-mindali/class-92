@@ -30,7 +30,13 @@ function AddSongForm(): JSX.Element {
 
   const addNewSong = () => {
     let allSongs = JSON.parse(localStorage.getItem("songs") as any);
-    const newSong = new Song(songDesc, songImg, songTitle, songURL);
+    const newSong = new Song(
+      songDesc,
+      songImg,
+      songTitle,
+      songURL,
+      youtube.getState().songs.allSongs.length + 1
+    );
     allSongs.push(newSong);
     localStorage.setItem("songs", JSON.stringify(allSongs));
     youtube.dispatch(addSongAction(newSong));
