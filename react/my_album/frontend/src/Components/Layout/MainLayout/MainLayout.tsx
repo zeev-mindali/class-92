@@ -1,8 +1,8 @@
+import MainRoutes from "../../Routes/MainRoutes/MainRoutes";
 import Categories from "../Categories/Categories";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Menu from "../Menu/Menu";
-import Photos from "../Photos/Photos";
 import "./MainLayout.css";
 
 function MainLayout(): JSX.Element {
@@ -18,7 +18,7 @@ function MainLayout(): JSX.Element {
         <Menu />
       </aside>
       <main>
-        <Photos />
+        <MainRoutes />
       </main>
       <footer>
         <Footer />
