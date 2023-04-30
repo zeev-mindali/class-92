@@ -1,13 +1,18 @@
-body {
+html,
+body,
+#root {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  height: 100%;
+  text-align: center;
+  background-image: linear-gradient(45deg, white, rgb(165, 165, 248));
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.Picture {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px gainsboro;
 }
