@@ -3,7 +3,6 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Menu from "../Menu/Menu";
 import Photos from "../Photos/Photos";
-import Summary from "../Summary/Summary";
 import "./MainLayout.css";
 
 function MainLayout(): JSX.Element {
