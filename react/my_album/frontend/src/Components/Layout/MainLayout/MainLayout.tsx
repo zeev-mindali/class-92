@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import MainRoutes from "../../Routes/MainRoutes/MainRoutes";
 import Categories from "../Categories/Categories";
 import Footer from "../Footer/Footer";
@@ -9,6 +9,7 @@ import { store } from "../../redux/Store";
 import { downloadCategoriesAction } from "../../redux/CategoriesReducer";
 
 function MainLayout(): JSX.Element {
+  const [refresh, setRefresh] = useState(false);
   useEffect(() => {
     if (store.getState().category.categories.length < 1) {
       if (localStorage.getItem("categories")) {
@@ -17,6 +18,7 @@ function MainLayout(): JSX.Element {
             JSON.parse(localStorage.getItem("categories") as any)
           )
         );
+        setRefresh(!refresh);
       }
     }
   }, []);

@@ -11,6 +11,7 @@ function MainRoutes(): JSX.Element {
       <Routes>
         <Route path="/" element={<Photos />} />
         <Route path="/addCategory" element={<AddCategory />} />
+        <Route path="/cat/:catName" element={<Photos />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </div>

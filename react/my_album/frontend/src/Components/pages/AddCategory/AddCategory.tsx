@@ -2,18 +2,30 @@ import { Button, ButtonGroup, TextField, Typography } from "@mui/material";
 import "./AddCategory.css";
 import { useState } from "react";
 import { Category } from "../../Modal/Category";
+import { useNavigate } from "react-router-dom";
+import { store } from "../../redux/Store";
+import { addCategoryAction } from "../../redux/CategoriesReducer";
 
 function AddCategory(): JSX.Element {
   const [newCategory, setCategory] = useState("");
   const [categories, setCategories] = useState<Category[]>([]);
+  const navigate = useNavigate();
 
   const handleAddButton = () => {
-    let temp = categories;
-    console.log(newCategory);
-    temp.push(new Category(categories.length + 1, newCategory));
-    setCategories(temp);
-    console.log(temp);
-    localStorage.setItem("categories", JSON.stringify(temp));
+    store.dispatch(
+      addCategoryAction(
+        new Category(
+          store.getState().category.categories.length + 1,
+          newCategory
+        )
+      )
+    );
+
+    localStorage.setItem(
+      "categories",
+      JSON.stringify(store.getState().category.categories)
+    );
+    navigate("/");
   };
 
   return (
