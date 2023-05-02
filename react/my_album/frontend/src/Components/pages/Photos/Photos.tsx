@@ -3,7 +3,12 @@ import "./Photos.css";
 
 function Photos(): JSX.Element {
   const params = useParams();
-  return <div className="Photos">{params.catName}</div>;
+  return (
+    <div className="Photos">
+      {params.catName}
+      <hr />
+    </div>
+  );
 }
 
 export default Photos;

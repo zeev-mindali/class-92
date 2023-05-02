@@ -11,7 +11,9 @@ function Categories(): JSX.Element {
   return (
     <div className="Categories">
       {store.getState().category.categories.map((item) => (
-        <NavLink to={`/cat/${item.name}`}>{item.name} | </NavLink>
+        <NavLink to={`/cat/${item.name}`} className="navlinkCategories">
+          {item.name} |{" "}
+        </NavLink>
       ))}
     </div>
   );

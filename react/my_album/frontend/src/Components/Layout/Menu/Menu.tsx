@@ -6,13 +6,15 @@ function Menu(): JSX.Element {
     <div className="Menu">
       Main Menu
       <hr />
-      <NavLink to="/">
+      <NavLink to="/" className="navlink">
         <div className="MenuItems">Home Page</div>
       </NavLink>
-      <NavLink to="/addCategory">
+      <NavLink to="/addCategory" className="navlink">
         <div className="MenuItems">Category Management</div>
       </NavLink>
-      <div className="MenuItems">Add Photo</div>
+      <NavLink to="/addPhoto" className="navlink">
+        <div className="MenuItems">Add Photo</div>
+      </NavLink>
       <div className="MenuItems">Login/Logout</div>
     </div>
   );

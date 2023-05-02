@@ -1,6 +1,12 @@
 .Menu {
+  font-family: "Bruno Ace", cursive;
 }
 .MenuItems {
   margin-bottom: 30px;
   margin-top: 30px;
+}
+
+.navlink {
+  text-decoration: none;
+  color: red;
 }
