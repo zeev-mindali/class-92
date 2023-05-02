@@ -22,7 +22,19 @@ function Photos(): JSX.Element {
   };
 
   const showCat = () => {
-    return <></>;
+    const filtredPhoto = store
+      .getState()
+      .photos.allPhotos.filter((item) => item.category == params.catName);
+    console.log(filtredPhoto);
+    return filtredPhoto.map((item) => (
+      <div className="Box" style={{ width: 200, height: 230 }}>
+        <img src={item.URL} style={photoStyle} />
+        <br />
+        {item.description}
+        <br />
+        {item.date}
+      </div>
+    ));
   };
 
   return (
