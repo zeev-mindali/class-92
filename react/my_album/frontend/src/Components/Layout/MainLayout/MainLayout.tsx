@@ -7,6 +7,7 @@ import Menu from "../Menu/Menu";
 import "./MainLayout.css";
 import { store } from "../../redux/Store";
 import { downloadCategoriesAction } from "../../redux/CategoriesReducer";
+import { downloadPhotoAction } from "../../redux/PhotosReducer";
 
 function MainLayout(): JSX.Element {
   const [refresh, setRefresh] = useState(false);
@@ -17,6 +18,14 @@ function MainLayout(): JSX.Element {
           downloadCategoriesAction(
             JSON.parse(localStorage.getItem("categories") as any)
           )
+        );
+        setRefresh(!refresh);
+      }
+    }
+    if (store.getState().photos.allPhotos.length < 1) {
+      if (localStorage.getItem("photos")) {
+        store.dispatch(
+          downloadPhotoAction(JSON.parse(localStorage.getItem("photos") as any))
         );
         setRefresh(!refresh);
       }
