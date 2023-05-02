@@ -3,6 +3,7 @@ import { store } from "../../redux/Store";
 import "./AddPhoto.css";
 import { useForm } from "react-hook-form";
 import { Photo } from "../../Modal/Photo";
+import { addPhotoAction } from "../../redux/PhotosReducer";
 
 function AddPhoto(): JSX.Element {
   //URL, descrption, category, current date (disabled), time (disabled)
@@ -16,9 +17,16 @@ function AddPhoto(): JSX.Element {
   } = useForm<Photo>();
 
   const send = (data: Photo) => {
+    data.id = store.getState().photos.allPhotos.length + 1;
     data.time = new Date().toLocaleTimeString();
     data.date = new Date().toDateString();
-    console.log(data);
+    //console.log(data);
+    store.dispatch(addPhotoAction(data));
+    //console.log(store.getState().photos.allPhotos);
+    localStorage.setItem(
+      "photos",
+      JSON.stringify(store.getState().photos.allPhotos)
+    );
   };
 
   useEffect(() => {
