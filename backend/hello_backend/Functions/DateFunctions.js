@@ -1,3 +1,4 @@
 exports.myBday = (bYear) => {
-  return new Date().getFullYear() - bYear;
+  console.log("i am in date function");
+  return new Date().getFullYear() - bYear.split("/")[2];
 };
