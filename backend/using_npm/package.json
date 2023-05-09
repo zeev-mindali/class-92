@@ -1,0 +1,15 @@
+{
+  "name": "using_npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "myNPM.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vladmandic/face-api": "^1.7.11"
+  }
+}
