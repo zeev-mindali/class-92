@@ -1,12 +1,15 @@
 import { Test } from "../Models/Test";
 
-const sendOK = () => {
-  let test = new Test("All is OK");
+const sendOK = (verb: string, body?: string) => {
+  if (body) {
+    console.log(body);
+  }
+  let test = new Test(`${verb}=>All is OK`);
   return test;
 };
 
-const sendBAD = () => {
-  let test = new Test("All is BAD");
+const sendBAD = (verb: string) => {
+  let test = new Test(`${verb}=>All is BAD`);
   return test;
 };
 

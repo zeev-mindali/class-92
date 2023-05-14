@@ -15,14 +15,14 @@ const router = express.Router();
 router.get(
   "/checkOK",
   async (request: Request, response: Response, next: NextFunction) => {
-    response.status(200).json(sendOK());
+    response.status(200).json(sendOK("GET"));
   }
 );
 
 router.get(
   "/checkBAD",
   async (request: Request, response: Response, next: NextFunction) => {
-    response.status(400).json(sendBAD());
+    response.status(400).json(sendBAD("GET"));
   }
 );
 
@@ -30,16 +30,14 @@ router.get(
 router.delete(
   "/checkOK",
   async (request: Request, response: Response, next: NextFunction) => {
-    let test = new Test("delete - All is OK");
-    response.status(200).json(test);
+    response.status(200).json(sendOK("DELETE"));
   }
 );
 
 router.delete(
   "/checkBAD",
   async (request: Request, response: Response, next: NextFunction) => {
-    let test = new Test("delete - All is BAD");
-    response.status(400).json(test);
+    response.status(400).json(sendBAD("DELETE"));
   }
 );
 
@@ -47,17 +45,14 @@ router.delete(
 router.post(
   "/checkOK",
   async (request: Request, response: Response, next: NextFunction) => {
-    let test = new Test("post - All is OK");
-    console.log(request.body);
-    response.status(200).json(test);
+    response.status(200).json(sendOK("POST", request.body));
   }
 );
 
 router.post(
   "/checkBAD",
   async (request: Request, response: Response, next: NextFunction) => {
-    let test = new Test("post - all is BAD");
-    response.status(404).json(test);
+    response.status(404).json(sendBAD("POST"));
   }
 );
 
@@ -65,15 +60,13 @@ router.post(
 router.put(
   "/checkOK",
   async (request: Request, response: Response, next: NextFunction) => {
-    let test = new Test("put - All is OK");
-    response.status(200).json(test);
+    response.status(200).json(sendOK("PUT"));
   }
 );
 router.put(
   "/checkBAD",
   async (request: Request, response: Response, next: NextFunction) => {
-    let test = new Test("put - All is BAD");
-    response.status(400).json(test);
+    response.status(400).json(sendBAD("PUT"));
   }
 );
 
