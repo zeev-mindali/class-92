@@ -1,4 +1,4 @@
-export class SimpleModal {
+export class Example {
   private id: number;
   private msg: string;
 
