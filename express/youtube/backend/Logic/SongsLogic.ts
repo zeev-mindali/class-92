@@ -1,6 +1,8 @@
 //add song, update song, delete song by id, getSongById, getAllSongs
 
 import dal_mysql from "../Utils/dal_mysql";
+import Song from "../Models/Song";
+import { OkPacket } from "mysql";
 
 const getAllSongs = async () => {
   const SQLcmd = "SELECT * FROM songs";
@@ -20,4 +22,16 @@ const deleteSongById = async (id: number) => {
   await dal_mysql.execute(SQLcmd);
 };
 
-export { getAllSongs, getSongById, deleteSongById };
+const addSong = async (newSong: Song) => {
+  const SQLcmd = `
+        INSERT INTO songs
+        (description, img, title, url)
+        VALUES
+        ('${newSong.description}','${newSong.img}','${newSong.title}','${newSong.url}')
+    `;
+  console.log(SQLcmd);
+  const result: OkPacket = await dal_mysql.execute(SQLcmd);
+  return result.insertId;
+};
+
+export { getAllSongs, getSongById, deleteSongById, addSong };

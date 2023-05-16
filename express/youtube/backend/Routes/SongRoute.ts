@@ -1,5 +1,10 @@
 import express, { NextFunction, Request, Response } from "express";
-import { deleteSongById, getAllSongs, getSongById } from "../Logic/SongsLogic";
+import {
+  addSong,
+  deleteSongById,
+  getAllSongs,
+  getSongById,
+} from "../Logic/SongsLogic";
 
 const songRouter = express.Router();
 
@@ -28,6 +33,13 @@ songRouter.delete(
   }
 );
 
-songRouter.post();
+songRouter.post(
+  "/addSong",
+  async (request: Request, response: Response, next: NextFunction) => {
+    const newSong = request.body;
+    const result = await addSong(newSong);
+    return response.status(201).json(`{'id':${result}}`);
+  }
+);
 
 export default songRouter;
