@@ -1,4 +1,4 @@
-//add song, update song, delete song, getSongById, getAllSongs
+//add song, update song, delete song by id, getSongById, getAllSongs
 
 import dal_mysql from "../Utils/dal_mysql";
 
@@ -14,4 +14,10 @@ const getSongById = async (id: number) => {
   return data;
 };
 
-export { getAllSongs, getSongById };
+const deleteSongById = async (id: number) => {
+  console.log(`delete song id ${id}`);
+  const SQLcmd = `DELETE FROM songs WHERE id=${id}`;
+  await dal_mysql.execute(SQLcmd);
+};
+
+export { getAllSongs, getSongById, deleteSongById };

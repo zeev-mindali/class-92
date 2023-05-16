@@ -1,5 +1,5 @@
 import express, { NextFunction, Request, Response } from "express";
-import { getAllSongs, getSongById } from "../Logic/SongsLogic";
+import { deleteSongById, getAllSongs, getSongById } from "../Logic/SongsLogic";
 
 const songRouter = express.Router();
 
@@ -18,5 +18,16 @@ songRouter.get(
     return response.status(200).json(await getSongById(songID));
   }
 );
+
+songRouter.delete(
+  "/deleteById/:id",
+  async (request: Request, response: Response, next: NextFunction) => {
+    const songID = +request.params.id;
+    await deleteSongById(songID);
+    return response.status(200).json({});
+  }
+);
+
+songRouter.post();
 
 export default songRouter;
