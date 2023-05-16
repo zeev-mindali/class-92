@@ -48,3 +48,4 @@ CREATE TABLE category (
   UPDATE songs
   SET title = 'Into the shadow with cluch orechestra' 
   WHERE (id = '2');
+

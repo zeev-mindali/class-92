@@ -7,6 +7,7 @@ import config from "./Utils/Config";
 import ErrorHandler from "./MiddleWare/route-not-found";
 import router from "./Routes/SimpleRouter";
 import carRouter from "./Routes/CarRouter";
+import songRouter from "./Routes/SongRoute";
 
 //create server
 const server = express();
@@ -28,6 +29,7 @@ server.use(fileUpload({ createParentPath: true }));
 //using routes => localhost:4000/api/v1/test/checkOK
 server.use("/api/v1/test", router);
 server.use("/api/v1/car", carRouter);
+server.use("/api/v1/songs", songRouter);
 //handle errors(Route Not Found);
 server.use("*", ErrorHandler);
 

@@ -22,6 +22,7 @@
     "express-fileupload": "^1.4.0",
     "loadsh": "^0.0.4",
     "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1"
   }
