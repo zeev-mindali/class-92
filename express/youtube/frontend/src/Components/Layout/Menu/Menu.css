@@ -1,0 +1,12 @@
+.Menu {
+  height: 100%;
+}
+.Menu > a {
+  text-decoration: none;
+  color: white;
+}
+
+.myCategories {
+  height: 50%;
+  overflow: auto;
+}
