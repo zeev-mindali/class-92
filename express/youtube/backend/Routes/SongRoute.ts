@@ -4,6 +4,7 @@ import {
   deleteSongById,
   getAllSongs,
   getSongById,
+  updateSong,
 } from "../Logic/SongsLogic";
 
 const songRouter = express.Router();
@@ -39,6 +40,14 @@ songRouter.post(
     const newSong = request.body;
     const result = await addSong(newSong);
     return response.status(201).json(`{'id':${result}}`);
+  }
+);
+
+songRouter.put(
+  "/updateSong",
+  async (request: Request, response: Response, next: NextFunction) => {
+    const song = request.body;
+    return response.status(201).json(await updateSong(song));
   }
 );
 

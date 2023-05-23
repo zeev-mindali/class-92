@@ -34,4 +34,14 @@ const addSong = async (newSong: Song) => {
   return result.insertId;
 };
 
-export { getAllSongs, getSongById, deleteSongById, addSong };
+const updateSong = async (song: Song) => {
+  const SQLcmd = `
+  UPDATE songs 
+  SET description = '${song.description}', img = '${song.img}', title = '${song.title}', url = '${song.url}'
+  WHERE id = ${song.id};
+  `;
+  await dal_mysql.execute(SQLcmd);
+  return true;
+};
+
+export { getAllSongs, getSongById, deleteSongById, addSong, updateSong };
