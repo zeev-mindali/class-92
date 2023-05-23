@@ -49,3 +49,10 @@ CREATE TABLE category (
   SET title = 'Into the shadow with cluch orechestra' 
   WHERE (id = '2');
 
+
+
+
+fixing mysql upgrade error (need to be run in workbench)
+============================================================
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345678';
+flush privileges;
