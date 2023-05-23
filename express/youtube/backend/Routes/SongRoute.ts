@@ -3,6 +3,7 @@ import {
   addSong,
   deleteSongById,
   getAllSongs,
+  getCat,
   getSongById,
   updateSong,
 } from "../Logic/SongsLogic";
@@ -48,6 +49,14 @@ songRouter.put(
   async (request: Request, response: Response, next: NextFunction) => {
     const song = request.body;
     return response.status(201).json(await updateSong(song));
+  }
+);
+
+songRouter.get(
+  "/getCat",
+  async (request: Request, response: Response, next: NextFunction) => {
+    console.log("in category list");
+    return response.status(200).json(await getCat());
   }
 );
 

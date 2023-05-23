@@ -55,4 +55,18 @@ const updateSong = async (song: Song) => {
   return true;
 };
 
-export { getAllSongs, getSongById, deleteSongById, addSong, updateSong };
+const getCat = async () => {
+  const SQLcmd = "SELECT * FROM category";
+  const data = await dal_mysql.execute(SQLcmd);
+
+  return data;
+};
+
+export {
+  getAllSongs,
+  getSongById,
+  deleteSongById,
+  addSong,
+  updateSong,
+  getCat,
+};

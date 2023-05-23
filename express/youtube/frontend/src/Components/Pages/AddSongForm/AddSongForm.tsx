@@ -12,7 +12,7 @@ function AddSongForm(): JSX.Element {
   const [songTitle, setTitle] = useState("");
   const [songDesc, setDesc] = useState("");
   const [songImg, setImage] = useState("");
-
+  const [category, setCategory] = useState(1);
   const navigate = useNavigate();
 
   const apiKey = "AIzaSyCrVV4Z7MrPNrwYCauxAwuWEY7A4HCZatU";
@@ -37,7 +37,7 @@ function AddSongForm(): JSX.Element {
       songTitle,
       songURL,
       youtube.getState().songs.allSongs.length + 1,
-      1
+      category
     );
     //we need to send a command to backend :) says elena
     const id = (
@@ -48,7 +48,6 @@ function AddSongForm(): JSX.Element {
     //why is allSongs is empty for god bless you
     //allSongs.push(newSong);
     //localStorage.setItem("songs", JSON.stringify(allSongs));
-
     youtube.dispatch(addSongAction(newSong));
     navigate("/");
   };
@@ -65,6 +64,22 @@ function AddSongForm(): JSX.Element {
         }}
       />
       <input type="submit" value="search" onClick={searchSong} />
+      <br />
+      <br />
+      <select
+        onChange={(args) => {
+          setCategory(+args.currentTarget.value);
+          console.log(args.currentTarget.selectedIndex);
+        }}
+      >
+        <option disabled>please select category</option>
+        <option>PLEASE</option>
+        <option>SHOW</option>
+        <option>ALL</option>
+        <option>CATEGORIES</option>
+        <option>FROM</option>
+        <option>DATABASE</option>
+      </select>
       <hr />
       <img src={songImg} />
       <br />
