@@ -50,6 +50,15 @@ CREATE TABLE category (
   WHERE (id = '2');
 
 
+joining two tables, for getting data (in our case category name)
+====================================================================
+SELECT songs.description, songs.img, songs.title, songs.url, category.name as categoryName
+FROM songs JOIN category
+ON songs.category = category.id
+
+SELECT songs.*, category.name as categoryName
+FROM songs JOIN category
+ON songs.category = category.id
 
 
 fixing mysql upgrade error (need to be run in workbench)

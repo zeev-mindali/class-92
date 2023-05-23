@@ -5,13 +5,24 @@ import Song from "../Models/Song";
 import { OkPacket } from "mysql";
 
 const getAllSongs = async () => {
-  const SQLcmd = "SELECT * FROM songs";
+  //const SQLcmd = "SELECT * FROM songs";
+  const SQLcmd = `
+    SELECT songs.*, category.name as categoryName
+    FROM songs JOIN category
+    ON songs.category = category.id
+  `;
   const data = await dal_mysql.execute(SQLcmd);
   return data;
 };
 
 const getSongById = async (id: number) => {
-  const SQLcmd = `SELECT * FROM songs WHERE id=${id}`;
+  //const SQLcmd = `SELECT * FROM songs WHERE id=${id}`;
+  const SQLcmd = `
+    SELECT songs.*, category.name as categoryName
+    FROM songs JOIN category
+    ON songs.category = category.id
+    WHERE id=${id}
+  `;
   const data = await dal_mysql.execute(SQLcmd);
   return data;
 };
