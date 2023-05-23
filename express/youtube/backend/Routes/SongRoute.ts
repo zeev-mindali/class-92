@@ -39,7 +39,7 @@ songRouter.post(
   async (request: Request, response: Response, next: NextFunction) => {
     const newSong = request.body;
     const result = await addSong(newSong);
-    return response.status(201).json(`{'id':${result}}`);
+    return response.status(201).json(`${result}`);
   }
 );
 

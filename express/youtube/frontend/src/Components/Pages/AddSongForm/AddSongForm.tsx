@@ -28,20 +28,26 @@ function AddSongForm(): JSX.Element {
     });
   };
 
-  const addNewSong = () => {
-    let allSongs = JSON.parse(localStorage.getItem("songs") as any);
-    const newSong = new Song(
+  const addNewSong = async () => {
+    //let allSongs = JSON.parse(localStorage.getItem("songs") as any);
+
+    let newSong = new Song(
       songDesc,
       songImg,
       songTitle,
       songURL,
-      youtube.getState().songs.allSongs.length + 1
+      youtube.getState().songs.allSongs.length + 1,
+      1
     );
     //we need to send a command to backend :) says elena
-    
-    allSongs.push(newSong);
+    const id = (
+      await axios.post("http://localhost:4000/api/v1/songs/addSong", newSong)
+    ).data;
+    newSong.id = +id;
+    console.log(newSong);
+    //why is allSongs is empty for god bless you
+    //allSongs.push(newSong);
     //localStorage.setItem("songs", JSON.stringify(allSongs));
-    
 
     youtube.dispatch(addSongAction(newSong));
     navigate("/");
