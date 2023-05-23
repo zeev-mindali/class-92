@@ -15,7 +15,7 @@ function AddSongForm(): JSX.Element {
 
   const navigate = useNavigate();
 
-  const apiKey = "AIzaSyC89Q2JGf-GbWN25SGjoW69l4VnDTHlzXY";
+  const apiKey = "AIzaSyCrVV4Z7MrPNrwYCauxAwuWEY7A4HCZatU";
   const apiURL = `https://www.googleapis.com/youtube/v3/videos?part=snippet&key=${apiKey}&id=`;
   const searchSong = () => {
     //console.log(songURL.split("=")[1]);
@@ -37,8 +37,12 @@ function AddSongForm(): JSX.Element {
       songURL,
       youtube.getState().songs.allSongs.length + 1
     );
+    //we need to send a command to backend :) says elena
+    
     allSongs.push(newSong);
-    localStorage.setItem("songs", JSON.stringify(allSongs));
+    //localStorage.setItem("songs", JSON.stringify(allSongs));
+    
+
     youtube.dispatch(addSongAction(newSong));
     navigate("/");
   };

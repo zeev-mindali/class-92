@@ -4,6 +4,7 @@ import "./YouTube.css";
 import { useEffect, useState } from "react";
 import { youtube } from "../../Redux/Store";
 import { downloadSongsAction } from "../../Redux/SongReducer";
+import axios from "axios";
 
 function YouTube(): JSX.Element {
   //const [songs,setSongs] = useState<Song[]>([]);
@@ -11,13 +12,29 @@ function YouTube(): JSX.Element {
   useEffect(() => {
     if (youtube.getState().songs.allSongs.length < 1) {
       //setSongs(JSON.parse(localStorage.getItem("songs") as any))
-      youtube.dispatch(
-        downloadSongsAction(JSON.parse(localStorage.getItem("songs") as any))
-      );
-      setRefresh(true);
+      //local
+      //   youtube.dispatch(
+      //     downloadSongsAction(JSON.parse(localStorage.getItem("songs") as any))
+      //   );
+      //remote backend
+      //console.log(getSongsFromBackend());
+      //youtube.dispatch(downloadSongsAction(getSongsFromBackend()));
+      axios
+        .get("http://localhost:4000/api/v1/songs/listSongs")
+        .then((response) => response.data)
+        .then((result) => {
+          youtube.dispatch(downloadSongsAction(result));
+          setRefresh(true);
+        });
     }
   }, []);
 
+  //   const getSongsFromBackend = async () => {
+  //     let myData = (
+  //       await axios.get("http://localhost:4000/api/v1/songs/listSongs")
+  //     ).data;
+  //     return myData;
+  //   };
   /*
   const songs = [
     {
@@ -72,7 +89,7 @@ function YouTube(): JSX.Element {
           key={item["id"]}
           url={item["url"]}
           title={item["title"]}
-          descrption={item["descption"]}
+          descrption={item["description"]}
           img={item["img"]}
           id={item["id"]}
         />
