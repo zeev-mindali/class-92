@@ -1,0 +1,38 @@
+#create a network
+#docker network create class92
+
+#download and install mysql inside a docker
+#docker container run --name mysql92 --network class92 -e MYSQL_ROOT_PASSWORD=12345678 -e MYSQL_DATABASE=youtube -d mysql:latest
+
+#download and install phpmyadmin (workbench in web)
+#docker container run --name phpmyadmin --network class92 -d --link mysql92:db -p 8100:80 phpmyadmin/phpmyadmin
+
+
+
+#CLI DOCKER COMMANDS 
+
+#networking:
+#create network                 : docker network create class92
+#list containers in network     : docker network inspect class92
+#list networks                  : docker network list
+#remove network                 : docker network rm class92
+
+#images:
+#build image                    : docker build -t zeevmindali/mysongs_frontend:1.0 . (dont forget the dot)
+#display all images             : docker images
+#remove image from docker       : docker image rm zeevmindali/mysongs_frontend:1.0
+#login to dokcer registery      : docker login
+#logout from docker registery   : docker logout
+#push image to the hub          : docker push zeevmindali/mysongs_frontend:1.0
+#pull image from the hub        : docker pull zeevmindali/mysongs_frontend:1.0
+
+
+#containers:
+#create a new containers        : docker create --name songs_container_frontend -p 5000:4000 zeevmindali/mysongs_frontend:1.0
+#display all containers         : docker ps -a
+#start container                : docker start mysongs_container_frontend
+#stop container                 : docker stop mysongs_container_frontend
+#start container inside network : docker start mysongs_container_frontend --network class92
+#remove non-running containers  : docker rm mysongs_container_frontend
+#remove running containers      : docker rm mysongs_container_frontend -f 
+#create & start container       : docker run -d --naame mysongs_container_frontend -p 8080:3000 zeevmindali/mysongs_frontend:1.0

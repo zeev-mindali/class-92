@@ -1,0 +1,67 @@
+create Song table
+========================
+CREATE TABLE song (
+  id INT NOT NULL AUTO_INCREMENT,
+  description VARCHAR(255) NOT NULL,
+  img VARCHAR(255) NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  url VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`));
+
+
+create Category table
+========================
+CREATE TABLE category (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NULL,
+  PRIMARY KEY (`id`));
+
+
+
+  CRUD => Create Read Update Delete
+
+  Read
+  ==============
+  SELECT * FROM songs
+  SELECT * FROM songs WHERE [condition]
+  
+  read specified columns
+  ------------------------------------
+  SELECT img as image,url as location FROM songs
+
+  count total columns
+  ----------------------------------------
+  SELECT count(*) from songs
+
+  Create
+  =================
+  INSERT INTO songs (description, img, title, url) 
+  VALUES ('Combining the legendary rock song with the unique sound of Ukrainian folk, we created', 'https://i.ytimg.com/vi/R0ebIzABQm0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBsne6G4S3bSWQPzdARU4IvvcGNtw', 'In The Shadows of Ukraine', 'https://www.youtube.com/watch?v=R0ebIzABQm0');
+
+  DELETE
+  =========================
+  DELETE FROM songs WHERE [condition] => DELETE FROM songs WHERE id=1;
+
+
+  UPDATE
+  ================================
+  UPDATE songs
+  SET title = 'Into the shadow with cluch orechestra' 
+  WHERE (id = '2');
+
+
+joining two tables, for getting data (in our case category name)
+====================================================================
+SELECT songs.description, songs.img, songs.title, songs.url, category.name as categoryName
+FROM songs JOIN category
+ON songs.category = category.id
+
+SELECT songs.*, category.name as categoryName
+FROM songs JOIN category
+ON songs.category = category.id
+
+
+fixing mysql upgrade error (need to be run in workbench)
+============================================================
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345678';
+flush privileges;
