@@ -6,7 +6,7 @@ carRouter.get(
   "/find/:carNumber",
   async (request: Request, response: Response, next: NextFunction) => {
     const carNumber = request.params.carNumber;
-    response.status(200).json(carInfo(carNumber));
+    response.status(200).json(await carInfo(carNumber));
   }
 );
 
