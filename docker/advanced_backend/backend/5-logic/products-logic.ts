@@ -20,7 +20,7 @@ async function addProduct(product: ProductModel): Promise<ProductModel> {
     product.price,
     product.stock,
   ]);
-  product.id = info.insertID;
+  product.id = info.insertId;
   return product;
 }
 

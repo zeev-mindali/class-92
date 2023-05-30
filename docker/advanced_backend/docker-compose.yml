@@ -1,0 +1,36 @@
+# MY SQL Container mindalizeev/nw_database:1.0
+
+services:
+  #NW database (mysql) service:
+  nw-database-service:
+    #Image name to create from Dockerfile
+    image: mindalizeev/nw_database:1.0
+
+    #build the image (if not exists) from specified docker file location
+    build: ./Database
+
+    #container name
+    container_name: nw-database-container
+
+    #Port binding (host:container)
+    ports:
+      - 3306:3306
+
+    #Envierment variables needed by mysql
+    environment:
+      MYSQL_HOST: localhost #interanly in the container
+      MYSQL_DATABASE: northwind
+      MYSQL_USER: Alice
+      MYSQL_PASSWORD: Wonderland
+      MYSQL_ROOT_PASSWORD: Wonderland #needed by mysql image
+
+    # ON crash - restart container, unless manually stopped:
+    restart: unless-stopped
+
+    # Database volumes
+    volumes:
+      - northwind:/var/lib/mysql
+###########################################################################################
+
+# Backend Container mindalizeev/nw_backend:1.0
+

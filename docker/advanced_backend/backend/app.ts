@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response, NextFunction } from "express";
 import routeNotfound from "./3-middleware/route-not-found";
 import catchAll from "./3-middleware/catach-all";
 import productsController from "./6-controllers/products-controller";
