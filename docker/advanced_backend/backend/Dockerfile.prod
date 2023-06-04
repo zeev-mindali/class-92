@@ -2,7 +2,8 @@
 FROM node:18-alpine3.16 AS build-stage
 
 #install typescript copiler globally
-RUN npm i -g typescript
+RUN npm install typescript -g --force
+#RUN npx -p typescript 
 
 #SET /tmp folder as the current directory for compiling the project
 WORKDIR /tmp

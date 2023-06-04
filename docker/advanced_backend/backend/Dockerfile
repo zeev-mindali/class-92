@@ -1,7 +1,6 @@
 #ingerit current image from alpine
 FROM node:18-alpine3.16
 
-
 #install typescript - becuase the computer is not working
 RUN npm i -g typescript
 

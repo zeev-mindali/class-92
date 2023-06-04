@@ -6,9 +6,59 @@
 
 services:
 
-
 #-----------------------------database
+#northwind database (mysql) service:
+  northwind-database-service:
+    #image name to create from docker file
+    image : mindalizeev/northwind-database-image:1.0
+    build : ./Database
+    container_name: northwind-database-container
+    ports:
+      - 3306:3306
+    #environment
+    environment:
+      MYSQL_HOST: localhost
+      MYSQL_DATABASE: northwind
+      MYSQL_USER: Alice
+      MYSQL_PASSWORD: Wonderland
+      MYSQL_ROOT_PASSWORD: Wonderland
+    restart: unless-stopped
+    volumes:
+      - northwind:/var/lib/mysql
 
 #-----------------------------backend
+  northwind-backend-service:
+    #build the image (if not exists) from specified Dockerfile.prod location:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod    
+    container_name: northwind-backend-container
+    ports:
+      - 5000:4000
+    environment:
+      PORT: 4000
+      MYSQL_HOST: northwind-database-service
+      MYSQL_DATABASE: northwind
+      MYSQL_USER: Alice
+      MYSQL_PASSWORD: Wonderland
+    restart: unless-stopped
+    depends_on:
+      - northwind-database-service
 
 #-----------------------------frontend
+  #northwind frontend service:
+  northwind-frontend-service:
+    image: mindalizeev/northwind-frontend-image:1.0
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile.prod
+    container_name: northwind-frontend-container
+    ports:
+      - 80:80 # nginx exposing our site on port 80, and we are also want to expose frontend container on port 80
+    restart: unless-stopped
+    depends_on:
+      - northwind-backend-service
+#------------------------------------------------------------
+#named volume list:
+volumes:
+  northwind:
