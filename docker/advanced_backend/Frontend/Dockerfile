@@ -1,11 +1,13 @@
 #inheirt image
 FROM node:18-alpine3.16
 
+#install typescript
+RUN npm i -g typescript
 #work directorty
 WORKDIR /app
 
 #copy local package*.json
-copy package*.json /app
+COPY package*.json /app
 
 #install npm 
 RUN npm i
