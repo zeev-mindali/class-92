@@ -1,36 +1,91 @@
-# MY SQL Container mindalizeev/nw_database:1.0
-
+# MYSQL + BACKEND (api) + FRONTEND (REACT)
+# for running everything use : docker-compose up -d
 services:
-  #NW database (mysql) service:
-  nw-database-service:
-    #Image name to create from Dockerfile
-    image: mindalizeev/nw_database:1.0
 
-    #build the image (if not exists) from specified docker file location
+#        -------------------------- database -------------------------
+  # Northwind database (mysql) service:
+  northwind-database-service:
+    
+    #image name to create from Dockerfile:
+    image: mindalizeev/northwind-database-image:1.0
+
+    #Build the image if not exists , the instruction are inside the directory
     build: ./Database
 
-    #container name
-    container_name: nw-database-container
+    #Container name:
+    container_name: northwind-database-container
 
-    #Port binding (host:container)
+    #port binding (host:container)
     ports:
       - 3306:3306
 
-    #Envierment variables needed by mysql
+    #Enviorment variables needed by MySQL:
     environment:
-      MYSQL_HOST: localhost #interanly in the container
+      MYSQL_HOST: localhost #internally for the container
       MYSQL_DATABASE: northwind
       MYSQL_USER: Alice
       MYSQL_PASSWORD: Wonderland
-      MYSQL_ROOT_PASSWORD: Wonderland #needed by mysql image
+      MYSQL_ROOT_PASSWORD: Wonderland #needed by mysql
 
-    # ON crash - restart container, unless manually stopped:
+    #On crash - restart continaer , unless manually stopped
     restart: unless-stopped
 
-    # Database volumes
+    #Database volumes:
+    #named volume
     volumes:
       - northwind:/var/lib/mysql
-###########################################################################################
 
-# Backend Container mindalizeev/nw_backend:1.0
+#        -------------------------- backend  -------------------------
 
+  northwind-backend-service:
+
+    #image name
+    image: mindalizeev/northwind-backend-image:1.0
+
+    #build the image (if not exists) from specified Dockerfile location:
+    build: ./backend
+
+    #container name:
+    container_name: northwind-backend-container
+
+    #port binding (host:container):
+    ports:
+      - 5000:4000
+
+    #Environment variables
+    environment:
+      PORT: 4000
+      MYSQL_HOST: northwind-database-service #above database service is the name
+      MYSQL_DATABASE: northwind
+      MYSQL_User: Alice
+      MYSQL_PASSWORD: Wonderland
+
+    #On crash
+    restart: unless-stopped
+
+    #host volumes
+    volumes:
+      - ./backend:/app
+
+    #On which service we are depnding on (starting/stopping order)
+    depends_on:
+      - northwind-database-service
+
+#        -------------------------- frontend -------------------------
+
+  northwind-frontend-service:
+
+    image: mindalizeev/northwind-frontend-image:1.0
+    build: ./Frontend
+    container_name: northwind-frontend-container
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    volumes:
+      - ./Frontend:/app
+    depends_on:
+      - northwind-backend-service
+# ------------------------------------------------------------------------------------------
+
+volumes:
+  northwind:

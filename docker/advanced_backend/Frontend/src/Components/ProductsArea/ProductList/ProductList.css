@@ -1,0 +1,11 @@
+.ProductList > table {
+	margin: auto;
+}
+
+.ProductList > table, .ProductList th, .ProductList td {
+    border: 1px solid black;
+}
+
+.ProductList td:first-child {
+    text-align: left;
+}

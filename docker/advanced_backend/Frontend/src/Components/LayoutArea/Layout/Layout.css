@@ -1,0 +1,21 @@
+.Layout {
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+
+nav {
+    padding: 10px;
+}
+
+.Layout > main {
+    overflow: auto;
+}
+
+.Layout h1 {
+	position: absolute;
+    left: 20px;
+    top: 5px;
+    margin: 0;
+}
