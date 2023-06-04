@@ -3,6 +3,7 @@ FROM node:18-alpine3.16
 
 #install typescript
 RUN npm i -g typescript
+
 #work directorty
 WORKDIR /app
 

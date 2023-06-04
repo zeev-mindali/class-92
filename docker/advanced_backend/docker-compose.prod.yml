@@ -1,0 +1,14 @@
+# MYSQL Container + REST API Container + React Container for production
+# Run without rebuilding images : docker-compose -f docker-compose.prod.yml up -d
+# Run with rebuilding images    : docker-compose -f docker-compose.prod.yml up -d --build
+# Stop and delete containers    : docker-compose down
+
+
+services:
+
+
+#-----------------------------database
+
+#-----------------------------backend
+
+#-----------------------------frontend

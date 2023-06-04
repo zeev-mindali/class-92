@@ -1,0 +1,43 @@
+#first stage- inherit current image from alpine image containing node
+FROM node:18-alpine3.16 AS build-stage
+
+#install typescript copiler globally
+RUN npm i -g typescript
+
+#SET /tmp folder as the current directory for compiling the project
+WORKDIR /tmp
+
+# copy local package*.json to /tmp
+COPY package*.json /tmp
+
+#install npm dependencies
+RUN npm i
+
+#copy project local files (first dot) into /tmp:
+COPY . /tmp
+
+#compile projects resides in /tmp (workdir) which generates javascript inside:
+RUN tsc
+
+#now we have /tmp/build the compiled directory
+
+# ----------------------------------------------
+#Second state - will overrun firststage installtions after complete:
+FROM node:18-alpine3.16 AS production-stage
+
+#our work directory
+WORKDIR /app
+
+#copy package*,json from previous stage /tmp into app
+COPY --from=build-stage /tmp/package*.json /app
+
+#copy javascript files from previous stage /tmp/build into /app:
+COPY --from=build-stage /tmp/build /app
+
+#install npm dependencies without development dependenices
+RUN npm i --only=prod
+
+#execute the project
+ENTRYPOINT node /app/app.js
+
+

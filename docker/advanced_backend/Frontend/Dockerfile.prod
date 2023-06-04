@@ -1,0 +1,31 @@
+#first stage - get the image
+FROM node:18-alpine3.16 AS build-stage
+
+#set /tmp folder as current folder
+WORKDIR /tmp
+
+#copy local pacjage*.json into /tmp:
+COPY package*.json /tmp
+
+#install npm dependencies 
+RUN npm i
+
+#copy local project into /tmp
+COPY . /tmp
+
+#create react env variable for production backend adressL note: (1) any variable must start with REACT_APP_ (2) this must be done before npm run build:
+ENV REACT_APP_BACKEND_BASE_URL=http://localhost:5000/api/
+
+#Compile project resides in /tmp which will create for us a smaller project inside build directory
+RUN npm run build
+
+#----------------------------------------------------------------------------------------------------------------------
+#Second state- override first stage, but this time also install a web server !!!!!!!
+FROM nginx:1.12-alpine AS production-stage
+
+#copy javascript files from first stage into second stage to ngnix
+COPY --from=build-stage /tmp/build /usr/share/nginx/html
+
+#excute our react frontend web
+#when container starts ("npm start" wont work cause it contains react starting commands)
+ENTRYPOINT nginx -g "daemon off;"
