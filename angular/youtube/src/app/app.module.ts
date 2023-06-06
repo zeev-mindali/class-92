@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +8,11 @@ import { HeaderComponent } from './Layout/header/header.component';
 import { FooterComponent } from './Layout/footer/footer.component';
 import { MainComponent } from './Layout/main/main.component';
 import { MenuComponent } from './Layout/menu/menu.component';
+import { AddSongComponent } from './pages/add-song/add-song.component';
+import { ImageComponent } from './pages/image/image.component';
+import { MyFormComponent } from './pages/my-form/my-form.component';
+
+
 
 @NgModule({
   declarations: [
@@ -14,11 +20,15 @@ import { MenuComponent } from './Layout/menu/menu.component';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    MenuComponent
+    MenuComponent,
+    AddSongComponent,
+    ImageComponent,
+    MyFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
