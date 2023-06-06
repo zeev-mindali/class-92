@@ -11,6 +11,7 @@ import { MenuComponent } from './Layout/menu/menu.component';
 import { AddSongComponent } from './pages/add-song/add-song.component';
 import { ImageComponent } from './pages/image/image.component';
 import { MyFormComponent } from './pages/my-form/my-form.component';
+import { TargilComponent } from './pages/targil/targil.component';
 
 
 
@@ -23,7 +24,8 @@ import { MyFormComponent } from './pages/my-form/my-form.component';
     MenuComponent,
     AddSongComponent,
     ImageComponent,
-    MyFormComponent
+    MyFormComponent,
+    TargilComponent
   ],
   imports: [
     BrowserModule,
