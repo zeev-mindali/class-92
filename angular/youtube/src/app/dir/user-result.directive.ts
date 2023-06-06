@@ -4,7 +4,7 @@ import { Directive, OnInit, ElementRef } from '@angular/core';
     selector: '[appUserResult]'
 })
 export class UserResultDirective implements OnInit {
-
+    
     constructor(private elementRef: ElementRef) { }
 
     ngOnInit(): void {

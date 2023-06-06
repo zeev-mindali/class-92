@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyFormComponent implements OnInit {
     myAge = 0;
+    showResult = false;
 
     constructor() { }
 
@@ -15,6 +16,10 @@ export class MyFormComponent implements OnInit {
 
     currentYear() {
         return new Date().getFullYear();
+    }
+
+    checkDate(event: any) {
+        this.showResult = event.target.value > 0;
     }
 
 }

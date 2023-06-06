@@ -1,5 +1,10 @@
 <br /><br /><br />
 <label>Enter your age:</label>
-<input type="number" name="age" id="id_age" [(ngModel)]="myAge">
+<input type="number" name="age" id="id_age" [(ngModel)]="myAge" (input)="checkDate($event)">
 <br />
-<h2 appUserResult>you was born in: {{currentYear()-myAge}}</h2>
+<h2 appUserResult *ngIf="showResult; else hideInfo">you was born in: {{currentYear()-myAge}}</h2>
+<h2>
+    <ng-template #hideInfo>
+        waiting for shir age...
+    </ng-template>
+</h2>
