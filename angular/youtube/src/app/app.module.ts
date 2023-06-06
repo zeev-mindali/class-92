@@ -14,6 +14,7 @@ import { MyFormComponent } from './pages/my-form/my-form.component';
 import { TargilComponent } from './pages/targil/targil.component';
 import { GreenDirective } from './dir/green.directive';
 import { UserResultDirective } from './dir/user-result.directive';
+import { WhiteDirective } from './dir/white.directive';
 
 
 
@@ -29,7 +30,8 @@ import { UserResultDirective } from './dir/user-result.directive';
     MyFormComponent,
     TargilComponent,
     GreenDirective,
-    UserResultDirective
+    UserResultDirective,
+    WhiteDirective
   ],
   imports: [
     BrowserModule,

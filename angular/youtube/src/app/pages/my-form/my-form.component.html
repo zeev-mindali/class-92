@@ -5,6 +5,8 @@
 <h2 appUserResult *ngIf="showResult; else hideInfo">you was born in: {{currentYear()-myAge}}</h2>
 <h2>
     <ng-template #hideInfo>
-        waiting for shir age...
+        <div appWhite>
+            waiting for shir age...
+        </div>
     </ng-template>
 </h2>
