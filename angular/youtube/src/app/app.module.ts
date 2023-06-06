@@ -12,6 +12,8 @@ import { AddSongComponent } from './pages/add-song/add-song.component';
 import { ImageComponent } from './pages/image/image.component';
 import { MyFormComponent } from './pages/my-form/my-form.component';
 import { TargilComponent } from './pages/targil/targil.component';
+import { GreenDirective } from './dir/green.directive';
+import { UserResultDirective } from './dir/user-result.directive';
 
 
 
@@ -25,7 +27,9 @@ import { TargilComponent } from './pages/targil/targil.component';
     AddSongComponent,
     ImageComponent,
     MyFormComponent,
-    TargilComponent
+    TargilComponent,
+    GreenDirective,
+    UserResultDirective
   ],
   imports: [
     BrowserModule,
