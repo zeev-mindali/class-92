@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyFormComponent implements OnInit {
     myAge = 0;
+
     constructor() { }
 
     ngOnInit(): void {
+    }
+
+    currentYear() {
+        return new Date().getFullYear();
     }
 
 }
