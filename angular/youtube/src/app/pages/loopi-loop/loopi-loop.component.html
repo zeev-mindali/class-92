@@ -1,0 +1,22 @@
+<h1>Grooms for Elena</h1>
+<hr />
+<h2>
+    <ul>
+        <li *ngFor="let item of grooms; let i=index">
+            {{i+1}} - {{item}}
+        </li>
+    </ul>
+</h2>
+<hr />
+<h2>
+    <ul>עאן
+        <li *ngFor="let item of myFruits" [ngStyle]="{color:'white'}" [ngSwitch]="item">
+            <span *ngSwitchCase="'apple'" [ngStyle]="{background:'pink'}">{{item}}</span>
+            <span *ngSwitchCase="'banana'" [ngStyle]="{background:'yellow'}">{{item}}</span>
+            <span *ngSwitchCase="'orange'" [ngStyle]="{background:'orange'}">{{item}}</span>
+            <span *ngSwitchCase="'kiwi'" [ngStyle]="{background:'green'}">{{item}}</span>
+            <span *ngSwitchCase="'cherry'" [ngStyle]="{background:'red'}">{{item}}</span>
+            <span *ngSwitchDefault>{{item}}</span>
+        </li>
+    </ul>
+</h2>

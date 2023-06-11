@@ -16,6 +16,7 @@ import { GreenDirective } from './dir/green.directive';
 import { UserResultDirective } from './dir/user-result.directive';
 import { WhiteDirective } from './dir/white.directive';
 import { MyDirectiveComponent } from './pages/my-directive/my-directive.component';
+import { LoopiLoopComponent } from './pages/loopi-loop/loopi-loop.component';
 
 
 
@@ -33,7 +34,8 @@ import { MyDirectiveComponent } from './pages/my-directive/my-directive.componen
     GreenDirective,
     UserResultDirective,
     WhiteDirective,
-    MyDirectiveComponent
+    MyDirectiveComponent,
+    LoopiLoopComponent
   ],
   imports: [
     BrowserModule,

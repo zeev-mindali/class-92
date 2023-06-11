@@ -11,6 +11,9 @@ export class MyDirectiveComponent implements OnInit {
     h2Color = "red";
     changeColor = true;
     myTime = new Date().toLocaleTimeString();
+    myBoxes = ["red_box", "green_box", "yellow_box"];
+    myIndex = 0;
+
     constructor() { }
 
     ngOnInit(): void {
@@ -29,6 +32,14 @@ export class MyDirectiveComponent implements OnInit {
         console.log("change color function: ", this.changeColor);
         return (this.changeColor) ? this.h2Color = "red" : this.h2Color = "white";
 
+    }
+
+    nextBox() {
+        this.myIndex++;
+        if (this.myIndex == this.myBoxes.length) {
+            this.myIndex = 0;
+        }
+        
     }
 }
 

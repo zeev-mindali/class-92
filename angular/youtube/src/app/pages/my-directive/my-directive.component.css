@@ -13,4 +13,12 @@ h1 {
     background-color: greenyellow;
     border: 3px solid green;
     padding: 1em;
+    margin-bottom: 1em;
+}
+
+.yellow_box {
+    background-color: yellow;
+    border: 3px solid orange;
+    padding: 1em;
+    margin-bottom: 1em;
 }
