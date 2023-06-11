@@ -22,6 +22,7 @@ import { BetterGreenDirective } from './dir/better-green.directive';
 import { LazyGreenDirective } from './dir/lazy-green.directive';
 import { InputUserComponent } from './pages/input-user/input-user.component';
 import { ItemsListComponent } from './pages/items-list/items-list.component';
+import { DrinksComponent } from './pages/drinks/drinks.component';
 
 
 
@@ -45,7 +46,8 @@ import { ItemsListComponent } from './pages/items-list/items-list.component';
     BetterGreenDirective,
     LazyGreenDirective,
     InputUserComponent,
-    ItemsListComponent
+    ItemsListComponent,
+    DrinksComponent
   ],
   imports: [
     BrowserModule,

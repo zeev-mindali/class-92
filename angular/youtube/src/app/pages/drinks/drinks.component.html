@@ -1,0 +1,11 @@
+<br /><br />
+<h1>What drink you want today</h1>
+<hr />
+<div class="row">
+    <div class="col-4 border" *ngFor="let item of drinks" [ngStyle]="{margin:'auto'}">
+        <h3>{{item.name | uppercase}}</h3>
+        <div>price: {{item.price | number: "1.2" | currency:"EUR"}}</div>
+        <div>Alcohol: {{item.alcohol | percent}}</div>
+        <div>Expired: {{item.expired | date}}</div>
+    </div>
+</div>
