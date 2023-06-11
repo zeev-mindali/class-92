@@ -10,10 +10,13 @@ export class MyDirectiveComponent implements OnInit {
     showTitle = true;
     h2Color = "red";
     changeColor = true;
-
+    myTime = new Date().toLocaleTimeString();
     constructor() { }
 
     ngOnInit(): void {
+        setInterval(() => {
+            this.myTime = new Date().toLocaleTimeString();
+        }, 950)
     }
 
     onBtnClick() {

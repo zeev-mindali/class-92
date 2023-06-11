@@ -5,3 +5,6 @@
 <button class="btn btn-info" (click)="onBtnClick()">Show/Hide</button>
 <h2 [ngStyle]="{color:h2Color}">Daniel is in the house.....</h2>
 <button class="btn btn-danger" (click)="changeColorFunction()">change color</button>
+<h1>{{myTime}}</h1>
+<!-- <h3 [ngClass]="{red_box:true}">ng class test</h3> -->
+<h3 [ngClass]="{red_box:changeColor,green_box:!changeColor}">ng class test</h3>
