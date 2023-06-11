@@ -17,6 +17,11 @@ import { UserResultDirective } from './dir/user-result.directive';
 import { WhiteDirective } from './dir/white.directive';
 import { MyDirectiveComponent } from './pages/my-directive/my-directive.component';
 import { LoopiLoopComponent } from './pages/loopi-loop/loopi-loop.component';
+import { MyHooksComponent } from './pages/my-hooks/my-hooks.component';
+import { BetterGreenDirective } from './dir/better-green.directive';
+import { LazyGreenDirective } from './dir/lazy-green.directive';
+import { InputUserComponent } from './pages/input-user/input-user.component';
+import { ItemsListComponent } from './pages/items-list/items-list.component';
 
 
 
@@ -35,7 +40,12 @@ import { LoopiLoopComponent } from './pages/loopi-loop/loopi-loop.component';
     UserResultDirective,
     WhiteDirective,
     MyDirectiveComponent,
-    LoopiLoopComponent
+    LoopiLoopComponent,
+    MyHooksComponent,
+    BetterGreenDirective,
+    LazyGreenDirective,
+    InputUserComponent,
+    ItemsListComponent
   ],
   imports: [
     BrowserModule,
