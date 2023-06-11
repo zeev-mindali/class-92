@@ -15,6 +15,7 @@ import { TargilComponent } from './pages/targil/targil.component';
 import { GreenDirective } from './dir/green.directive';
 import { UserResultDirective } from './dir/user-result.directive';
 import { WhiteDirective } from './dir/white.directive';
+import { MyDirectiveComponent } from './pages/my-directive/my-directive.component';
 
 
 
@@ -31,7 +32,8 @@ import { WhiteDirective } from './dir/white.directive';
     TargilComponent,
     GreenDirective,
     UserResultDirective,
-    WhiteDirective
+    WhiteDirective,
+    MyDirectiveComponent
   ],
   imports: [
     BrowserModule,

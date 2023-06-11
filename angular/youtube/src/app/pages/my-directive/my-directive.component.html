@@ -1,0 +1,7 @@
+<h1>My construction directive</h1>
+<hr />
+<!-- {{myTitle}} -->
+<h2 *ngIf="showTitle" [ngStyle]="{color:'yellow'}">{{myTitle}}</h2>
+<button class="btn btn-info" (click)="onBtnClick()">Show/Hide</button>
+<h2 [ngStyle]="{color:h2Color}">Daniel is in the house.....</h2>
+<button class="btn btn-danger" (click)="changeColorFunction()">change color</button>
