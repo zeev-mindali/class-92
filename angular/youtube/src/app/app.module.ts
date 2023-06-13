@@ -31,6 +31,9 @@ import { FavoritesComponent } from './youtube/favorites/favorites.component';
 import { AboutUsComponent } from './youtube/about-us/about-us.component';
 import { Page404Component } from './youtube/page404/page404.component';
 import { SingleSongComponent } from './youtube/single-song/single-song.component';
+import { PropsComponent } from './pages/props/props.component';
+import { SingleItemComponent } from './pages/single-item/single-item.component';
+import { ListComponent } from './pages/list/list.component';
 
 
 @NgModule({
@@ -61,7 +64,10 @@ import { SingleSongComponent } from './youtube/single-song/single-song.component
         FavoritesComponent,
         AboutUsComponent,
         Page404Component,
-        SingleSongComponent
+        SingleSongComponent,
+        PropsComponent,
+        SingleItemComponent,
+        ListComponent
     ],
     imports: [
         BrowserModule,

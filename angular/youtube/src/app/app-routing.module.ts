@@ -7,6 +7,7 @@ import { CategoriesComponent } from './youtube/categories/categories.component';
 import { AboutUsComponent } from './youtube/about-us/about-us.component';
 import { Page404Component } from './youtube/page404/page404.component';
 import { SingleSongComponent } from './youtube/single-song/single-song.component';
+import { PropsComponent } from './pages/props/props.component';
 
 const routes: Routes = [
     { path: "", component: SongListComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: "cat", component: CategoriesComponent },
     { path: "about", component: AboutUsComponent },
     { path: "song/:id", component: SingleSongComponent },
+    { path: "props", component: PropsComponent },
     { path: "**", component: Page404Component }
 ];
 
