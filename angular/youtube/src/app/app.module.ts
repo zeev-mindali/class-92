@@ -34,6 +34,7 @@ import { SingleSongComponent } from './youtube/single-song/single-song.component
 import { PropsComponent } from './pages/props/props.component';
 import { SingleItemComponent } from './pages/single-item/single-item.component';
 import { ListComponent } from './pages/list/list.component';
+import { UserInputComponent } from './pages/user-input/user-input.component';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { ListComponent } from './pages/list/list.component';
         SingleSongComponent,
         PropsComponent,
         SingleItemComponent,
-        ListComponent
+        ListComponent,
+        UserInputComponent
     ],
     imports: [
         BrowserModule,

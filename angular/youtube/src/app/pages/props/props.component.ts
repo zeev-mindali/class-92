@@ -8,14 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class PropsComponent implements OnInit {
     title = "the jungle";
     listFruits_ar = ["apple", "mango"];
-    fruit_input = "orange";
+    isHeb = true;
+
     constructor() { }
 
     ngOnInit(): void {
     }
 
-    addProduct() {
-        this.listFruits_ar.push(this.fruit_input);
+    addProductFromApp(val: any) {
+        this.listFruits_ar.push(val)
     }
 
+    returnButtonName() {
+        return this.isHeb ? "הוסף" : "Add";
+    }
+
+    changeLanguage() {
+        this.isHeb = !this.isHeb;
+    }
 }

@@ -2,12 +2,7 @@
     <h2>
         Welcome to {{title}}
     </h2>
-    <div class="user_inputs">
-        <h3>Enter your product to the list:</h3>
-        <div class="input-group px-5">
-            <input type="text" class="form-control" [(ngModel)]="fruit_input">
-            <button class="btn btn-info" (click)="addProduct()">add product</button>
-        </div>
-    </div>
+    <app-user-input (addProdEvent)="addProductFromApp($event)">{{returnButtonName()}}</app-user-input>
+    <button (click)="changeLanguage()">החלף שפה</button>
     <app-list [listProps]="listFruits_ar"></app-list>
 </div>
