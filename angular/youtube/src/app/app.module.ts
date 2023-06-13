@@ -25,6 +25,12 @@ import { ItemsListComponent } from './pages/items-list/items-list.component';
 import { DrinksComponent } from './pages/drinks/drinks.component';
 import { CryptoListComponent } from './pages/crypto-list/crypto-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SongListComponent } from './youtube/song-list/song-list.component';
+import { CategoriesComponent } from './youtube/categories/categories.component';
+import { FavoritesComponent } from './youtube/favorites/favorites.component';
+import { AboutUsComponent } from './youtube/about-us/about-us.component';
+import { Page404Component } from './youtube/page404/page404.component';
+import { SingleSongComponent } from './youtube/single-song/single-song.component';
 
 
 @NgModule({
@@ -49,7 +55,13 @@ import { HttpClientModule } from '@angular/common/http';
         InputUserComponent,
         ItemsListComponent,
         DrinksComponent,
-        CryptoListComponent
+        CryptoListComponent,
+        SongListComponent,
+        CategoriesComponent,
+        FavoritesComponent,
+        AboutUsComponent,
+        Page404Component,
+        SingleSongComponent
     ],
     imports: [
         BrowserModule,
