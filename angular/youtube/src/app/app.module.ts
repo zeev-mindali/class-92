@@ -23,38 +23,41 @@ import { LazyGreenDirective } from './dir/lazy-green.directive';
 import { InputUserComponent } from './pages/input-user/input-user.component';
 import { ItemsListComponent } from './pages/items-list/items-list.component';
 import { DrinksComponent } from './pages/drinks/drinks.component';
-
+import { CryptoListComponent } from './pages/crypto-list/crypto-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    MainComponent,
-    MenuComponent,
-    AddSongComponent,
-    ImageComponent,
-    MyFormComponent,
-    TargilComponent,
-    GreenDirective,
-    UserResultDirective,
-    WhiteDirective,
-    MyDirectiveComponent,
-    LoopiLoopComponent,
-    MyHooksComponent,
-    BetterGreenDirective,
-    LazyGreenDirective,
-    InputUserComponent,
-    ItemsListComponent,
-    DrinksComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        MainComponent,
+        MenuComponent,
+        AddSongComponent,
+        ImageComponent,
+        MyFormComponent,
+        TargilComponent,
+        GreenDirective,
+        UserResultDirective,
+        WhiteDirective,
+        MyDirectiveComponent,
+        LoopiLoopComponent,
+        MyHooksComponent,
+        BetterGreenDirective,
+        LazyGreenDirective,
+        InputUserComponent,
+        ItemsListComponent,
+        DrinksComponent,
+        CryptoListComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
