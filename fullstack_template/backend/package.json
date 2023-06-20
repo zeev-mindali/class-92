@@ -1,0 +1,37 @@
+{
+  "name": "express_demo",
+  "version": "1.0.0",
+  "description": "a demo for class 89 , the best that lecturer can get",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec ts-node server.ts",
+    "server": "nodemon --exec ts-node server.ts"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "js",
+    "node.js",
+    "class",
+    "89",
+    "kill",
+    "nadav"
+  ],
+  "author": "zeev mindali",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express-fileupload": "^1.4.1",
+    "@types/morgan": "^1.9.4",
+    "@types/mysql": "^2.15.21",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "loadsh": "^0.0.4",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1"
+  }
+}

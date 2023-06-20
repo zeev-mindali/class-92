@@ -1,0 +1,93 @@
+CREATE TABLE IF NOT EXISTS new_table (
+  id INT NOT NULL AUTO_INCREMENT,
+  msg VARCHAR(45) NULL,
+  PRIMARY KEY (id));
+
+
+example for songs 
+
+
+songs table
+==================
+CREATE TABLE `youtube`.`songs` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `description` VARCHAR(255) NULL,
+  `img` VARCHAR(255) NULL,
+  `title` VARCHAR(255) NULL,
+  `url` VARCHAR(255) NULL,
+  `video_file` VARCHAR(255) NULL,
+  `category` INT NULL,
+  PRIMARY KEY (`id`));
+
+
+category table
+=========================
+CREATE TABLE `youtube`.`categories` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+
+create songs table
+=========================================
+CREATE TABLE IF NOT EXISTS youtube.songs (
+  id INT NOT NULL AUTO_INCREMENT,
+  url VARCHAR(45) NOT NULL,
+  songName VARCHAR(45) NOT NULL,
+  songImg VARCHAR(45) NOT NULL,
+  category INT NOT NULL,
+  videoFile VARCHAR(45) NOT NULL,
+  PRIMARY KEY (id));
+
+create category table
+============================
+CREATE TABLE IF NOT EXISTS youtube.category (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(45) NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE INDEX name_UNIQUE (name ASC) VISIBLE);
+
+
+
+insert new data into songs table
+=====================================
+INSERT INTO youtube.songs 
+(url, songName, songImg, category, videoFile)
+ VALUES 
+ ('https://www.youtube.com/watch?v=R0ebIzABQm0', 'In The Shadows of Ukraine', 'https://i.ytimg.com/vi/R0ebIzABQm0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBsne6G4S3bSWQPzdARU4IvvcGNtw', '1', 'R0ebIzABQm0');
+
+
+delete data 
+========================
+DELETE FROM songs where id=1
+
+
+joining two tables
+===========================
+SELECT songs.* , category.name as categoryName
+FROM songs JOIN category
+ON songs.category = category.id
+
+for updating data
+======================
+UPDATE youtube.songs SET category = '2' WHERE (id = '3');
+
+create new song
+=====================
+INSERT INTO youtube.songs (url, songName, songImg, category) VALUES ('bla', 'bla', 'bla', '2');
+
+
+update a song
+======================
+UPDATE youtube.songs SET url = '0', songName = '0', songImg = '0', category = '0', videoFile = '0' WHERE (id = '6');
+
+
+create new category
+==========================
+INSERT INTO youtube.category (name) VALUES ('General');
+
+fixing mysql upgrade error (need to be run in workbench)
+============================================================
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345678';
+flush privileges;
+
