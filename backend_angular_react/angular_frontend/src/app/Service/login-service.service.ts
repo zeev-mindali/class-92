@@ -7,6 +7,7 @@ import { Injectable, OnInit } from '@angular/core';
 })
 export class LoginServiceService implements OnInit {
     myURL = "http://localhost:4000/api/user/checkLogin";
+    data = "";
 
     constructor(private http: HttpClient) { }
 
@@ -18,9 +19,11 @@ export class LoginServiceService implements OnInit {
         const data = {
             "user_name": userName,
             "password": password
-        }
-        const result = this.http.post(this.myURL, data);
-        //console.log(result)
-        return result;
+        };
+
+        return this.http.post(this.myURL, data);
+
+
+        //return data;
     }
 }

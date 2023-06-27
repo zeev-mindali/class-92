@@ -19,10 +19,7 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.loginService.login(this.userName, this.userPass).subscribe(data => {
-            console.log(data);
-            this.logged = true;
-        })
+
     }
 
     onUserChange(event: any) {
@@ -36,7 +33,11 @@ export class AppComponent implements OnInit {
     onMakeLogin() {
         console.log("user: ", this.userName);
         console.log("pass: ", this.userPass);
+        try {
+            this.loginService.login(this.userName, this.userPass).subscribe(data => console.log("working :)"));
+        } catch (err) {
+            console.log("why who are you???? ", err);
+        }
 
-        this.loginService.login(this.userName, this.userPass);
     }
 }
