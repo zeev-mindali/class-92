@@ -30,16 +30,21 @@ const updateUser = async (updateUser: User) => {
 }
 
 const checkLogin = async (user: User) => {
-    const sqlCommand = `SELECT count(*) as userok FROM siteusers WHERE user_name='${user.user_name} AND password='${user.password}'`;
+    const sqlCommand = `SELECT count(*) as userok FROM siteusers WHERE user_name='${user.user_name}' AND password='${user.password}'`;
     const result = await dal_mysql.execute(sqlCommand);
-    return result == 1;
+    return result[0].userok == 1;
 }
 
 const getUserList = async () => {
     const sqlCommand = `SELECT id,user_name,user_email FROM siteusers`;
-    return await dal_mysql.execute(sqlCommand);
+    const users = await dal_mysql.execute(sqlCommand);
+    return users;
+}
+
+const test = () => {
+    return "all working :)";
 }
 
 export default {
-    addUser, deleteUser, updateUser, checkLogin, getUserList
+    addUser, deleteUser, updateUser, checkLogin, getUserList, test
 }

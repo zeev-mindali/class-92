@@ -7,7 +7,7 @@ const loginRouter = express.Router();
 
 // addUser, deleteUser, updateUser, checkLogin, getUserList
 loginRouter.post(
-    "add",
+    "/add",
     async (request: Request, response: Response, next: NextFunction) => {
         const newUser: User = request.body;
         return response.status(201).json(await userLogic.addUser(newUser));
@@ -15,7 +15,7 @@ loginRouter.post(
 )
 
 loginRouter.delete(
-    "delete/:id",
+    "/delete/:id",
     async (request: Request, response: Response, next: NextFunction) => {
         const userId: number = +request.params.id;
         return response.status(204).json(await userLogic.deleteUser(userId));
@@ -23,7 +23,7 @@ loginRouter.delete(
 )
 
 loginRouter.put(
-    "update",
+    "/update",
     async (request: Request, response: Response, next: NextFunction) => {
         const updateUser: User = request.body;
         return response.status(201).json(await userLogic.updateUser(updateUser));
@@ -31,7 +31,7 @@ loginRouter.put(
 )
 
 loginRouter.post(
-    "checkLogin",
+    "/checkLogin",
     async (request: Request, response: Response, next: NextFunction) => {
         const userLogin: User = request.body;
         if (await userLogic.checkLogin(userLogin)) {
@@ -42,9 +42,16 @@ loginRouter.post(
 )
 
 loginRouter.get(
-    "getAll",
+    "/getAll",
     async (request: Request, response: Response, next: NextFunction) => {
         return response.status(200).json(await userLogic.getUserList());
+    }
+)
+
+loginRouter.get(
+    "/test",
+    async (request: Request, response: Response, next: NextFunction) => {
+        return response.status(200).json(await userLogic.test());
     }
 )
 
