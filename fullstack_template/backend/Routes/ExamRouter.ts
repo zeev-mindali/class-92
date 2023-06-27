@@ -11,4 +11,25 @@ routerExam.get(
     }
 );
 
+routerExam.get(
+    "clauseA",
+    async (request: Request, response: Response, next: NextFunction) => {
+        response.status(200).json('ok');
+    }
+)
+
+routerExam.get(
+    "clauseB",
+    async (request: Request, response: Response, next: NextFunction) => {
+        response.status(200).json('ok');
+    }
+)
+
+routerExam.post(
+    "clauseC",
+    async (request: Request, response: Response, next: NextFunction) => {
+        response.status(200).json('ok');
+    }
+)
+
 export default routerExam;

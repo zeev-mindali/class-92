@@ -1,0 +1,14 @@
+siteUsers table 
+======================
+CREATE TABLE IF NOT EXISTS siteusers (
+  id INT NOT NULL AUTO_INCREMENT,
+  user_name VARCHAR(45) NOT NULL DEFAULT 'na',
+  user_email VARCHAR(90) NOT NULL DEFAULT 'na',
+  password VARCHAR(45) NULL,
+  user_create DATETIME NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX user_name_UNIQUE (user_name ASC) VISIBLE,
+  UNIQUE INDEX user_email_UNIQUE (user_email ASC) VISIBLE
+  );
+
+
