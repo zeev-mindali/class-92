@@ -1,5 +1,5 @@
 const checkLogin = require("./login");
 
 test("checking login system:", () => {
-    expect(checkLogin("admin", "admin1")).toBe(true);
+    expect(checkLogin("admin", "admin")).toBe(true);
 })
