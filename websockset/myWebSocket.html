@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web socket</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to web socket</h1>
+    <hr />
+    <input type="text" id="id_msg" name="msg" placeholder="enter your message" />
+    <input type="button" onclick="sendMessage()" value="send" />
+    <hr />
+    <input type="button" onclick="openConnection()" value="open connection" />
+    <input type="button" onclick="closeConnection()" value="close connection" />
+    <script>
+        //let wsUri = "wss://ws-postman-echo.com/raw";
+        let wsUri = "wss://socketsbay.com/wss/v2/1/demo/";
+        var webSocket = new WebSocket(wsUri); //we opened the connection
+
+        const sendMessage = () => {
+            let myMessage = document.getElementById("id_msg").value;
+            webSocket.send(myMessage);
+            console.log("message was sent!!!");
+        }
+
+        const openConnection = () => {
+            console.log("connection is opened");
+        }
+
+        const closeConnection = () => {
+            console.log("Closing connection");
+            webSocket.close();
+        }
+
+        //events
+        webSocket.onopen = (event) => {
+            console.log("Connection is opened");
+        }
+
+        webSocket.onclose = (event) => {
+            console.log("Connection is closed");
+        }
+
+        webSocket.onmessage = (event) => {
+            console.log("message event:\n", event)
+            console.log("message data:", event.data);
+        }
+
+        webSocket.onerror = (error) => {
+            console.log("Error:\n", error);
+            console.log("Error data:\n", error.data);
+        }
+    </script>
+</body>
+
+</html>
