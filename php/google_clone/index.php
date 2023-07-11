@@ -15,8 +15,8 @@
         <h1>PHP SEARCH</h1><hr/>
         <label>In your mother in law, what you want</label>
         <form method="get" action="">
-            <input type="text" name="results"/>>
-            <input type="submit"/>>
+            <input type="text" name="results"/>
+            <input type="submit"/>
         </form>
         <?php
             //send to page title for the result
