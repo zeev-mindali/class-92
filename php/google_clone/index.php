@@ -21,7 +21,7 @@
         <?php
             //send to page title for the result
             echo "<br/> and the oscar go to <hr/><br/>";
-            $url = "https://www.google.co.il/search?q=".str_replace(' ','%20',$_GET['results']);
+            $url = "https://www.google.com/search?q=".str_replace(' ','%20',$_GET['results']);
             
             //create instance of curl
             $ch = curl_init();
